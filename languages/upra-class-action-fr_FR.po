@@ -1,0 +1,1017 @@
+#
+msgid ""
+msgstr ""
+"Language: fr_FR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid ""
+msgstr ""
+
+msgid "UPRA Shareholders"
+msgstr "[FR] UPRA Shareholders"
+
+msgid "UPRA Shareholders"
+msgstr "[FR] UPRA Shareholders"
+
+msgid "%s Shareholders"
+msgstr "[FR] %s Shareholders"
+
+msgid "Tools & Export"
+msgstr "[FR] Tools & Export"
+
+msgid "Tools"
+msgstr "[FR] Tools"
+
+msgid "Statistics"
+msgstr "[FR] Statistics"
+
+msgid "Statistics"
+msgstr "[FR] Statistics"
+
+msgid "Invalid company specified."
+msgstr "[FR] Invalid company specified."
+
+msgid "Select a Company"
+msgstr "[FR] Select a Company"
+
+msgid "Choose a company to view its shareholder data:"
+msgstr "[FR] Choose a company to view its shareholder data:"
+
+msgid "Shareholders:"
+msgstr "[FR] Shareholders:"
+
+msgid "Total Shares:"
+msgstr "[FR] Total Shares:"
+
+msgid "Participation:"
+msgstr "[FR] Participation:"
+
+msgid "View Shareholders"
+msgstr "[FR] View Shareholders"
+
+msgid "Export Data"
+msgstr "[FR] Export Data"
+
+msgid "Send Bulk Email"
+msgstr "[FR] Send Bulk Email"
+
+msgid "Search Shareholders"
+msgstr "[FR] Search Shareholders"
+
+msgid "Total Shares"
+msgstr "[FR] Total Shares"
+
+msgid "Total Participation"
+msgstr "[FR] Total Participation"
+
+msgid "Total Shareholders"
+msgstr "[FR] Total Shareholders"
+
+msgid "UPRA Shareholders Tools"
+msgstr "[FR] UPRA Shareholders Tools"
+
+msgid "Select Company"
+msgstr "[FR] Select Company"
+
+msgid "Select Company"
+msgstr "[FR] Select Company"
+
+msgid "Export %s shareholder data in various formats."
+msgstr "[FR] Export %s shareholder data in various formats."
+
+msgid "Export CSV"
+msgstr "[FR] Export CSV"
+
+msgid "Export JSON"
+msgstr "[FR] Export JSON"
+
+msgid "Export Excel"
+msgstr "[FR] Export Excel"
+
+msgid "Email Tools"
+msgstr "[FR] Email Tools"
+
+msgid "Send bulk emails to %s shareholders."
+msgstr "[FR] Send bulk emails to %s shareholders."
+
+msgid "Send Bulk Email"
+msgstr "[FR] Send Bulk Email"
+
+msgid "%s Statistics"
+msgstr "[FR] %s Statistics"
+
+msgid "Total Shareholders"
+msgstr "[FR] Total Shareholders"
+
+msgid "Total Shares"
+msgstr "[FR] Total Shares"
+
+msgid "Total Participation"
+msgstr "[FR] Total Participation"
+
+msgid "View Details"
+msgstr "[FR] View Details"
+
+msgid "Export Data"
+msgstr "[FR] Export Data"
+
+msgid "Send Bulk Email to %s Shareholders"
+msgstr "[FR] Send Bulk Email to %s Shareholders"
+
+msgid "This will send an email to all %d %s shareholders."
+msgstr "[FR] This will send an email to all %d %s shareholders."
+
+msgid "Subject"
+msgstr "[FR] Subject"
+
+msgid "Message"
+msgstr "[FR] Message"
+
+msgid "HTML formatting is supported."
+msgstr "[FR] HTML formatting is supported."
+
+msgid "Are you sure you want to send this email to all shareholders?"
+msgstr "[FR] Are you sure you want to send this email to all shareholders?"
+
+msgid "Send to %d Shareholders"
+msgstr "[FR] Send to %d Shareholders"
+
+msgid "Cancel"
+msgstr "[FR] Cancel"
+
+msgid "UPRA Shareholders Statistics"
+msgstr "[FR] UPRA Shareholders Statistics"
+
+msgid "Statistics"
+msgstr "[FR] Statistics"
+
+msgid "Total Shareholders"
+msgstr "[FR] Total Shareholders"
+
+msgid "Total Shares"
+msgstr "[FR] Total Shares"
+
+msgid "Total Participation"
+msgstr "[FR] Total Participation"
+
+msgid "View Details"
+msgstr "[FR] View Details"
+
+msgid "Export Data"
+msgstr "[FR] Export Data"
+
+msgid "Shareholders per page"
+msgstr "[FR] Shareholders per page"
+
+msgid "ID"
+msgstr "[FR] ID"
+
+msgid "Name"
+msgstr "[FR] Name"
+
+msgid "Email"
+msgstr "[FR] Email"
+
+msgid "Phone"
+msgstr "[FR] Phone"
+
+msgid "Stock"
+msgstr "[FR] Stock"
+
+msgid "Purchase Price"
+msgstr "[FR] Purchase Price"
+
+msgid "Sell Price"
+msgstr "[FR] Sell Price"
+
+msgid "Loss"
+msgstr "[FR] Loss"
+
+msgid "IP Address"
+msgstr "[FR] IP Address"
+
+msgid "Country"
+msgstr "[FR] Country"
+
+msgid "Remarks"
+msgstr "[FR] Remarks"
+
+msgid "Registration Date"
+msgstr "[FR] Registration Date"
+
+msgid "Actions"
+msgstr "[FR] Actions"
+
+msgid "Delete"
+msgstr "[FR] Delete"
+
+msgid "Export Selected"
+msgstr "[FR] Export Selected"
+
+msgid "Send Email to Selected"
+msgstr "[FR] Send Email to Selected"
+
+msgid "Edit"
+msgstr "[FR] Edit"
+
+msgid "View Details"
+msgstr "[FR] View Details"
+
+msgid "Delete"
+msgstr "[FR] Delete"
+
+msgid "Edit"
+msgstr "[FR] Edit"
+
+msgid "View"
+msgstr "[FR] View"
+
+msgid "Email"
+msgstr "[FR] Email"
+
+msgid "Delete"
+msgstr "[FR] Delete"
+
+msgid "Security check failed"
+msgstr "[FR] Security check failed"
+
+msgid "You do not have permission to perform this action"
+msgstr "[FR] You do not have permission to perform this action"
+
+msgid "No shareholders selected."
+msgstr "[FR] No shareholders selected."
+
+msgid "%d shareholders deleted successfully."
+msgstr "[FR] %d shareholders deleted successfully."
+
+msgid "No shareholders were deleted."
+msgstr "[FR] No shareholders were deleted."
+
+msgid "No shareholders found for export."
+msgstr "[FR] No shareholders found for export."
+
+msgid "%d shareholders deleted."
+msgstr "[FR] %d shareholders deleted."
+
+msgid "Selected shareholders exported."
+msgstr "[FR] Selected shareholders exported."
+
+msgid "All dates"
+msgstr "[FR] All dates"
+
+msgid "Today"
+msgstr "[FR] Today"
+
+msgid "This week"
+msgstr "[FR] This week"
+
+msgid "This month"
+msgstr "[FR] This month"
+
+msgid "Filter"
+msgstr "[FR] Filter"
+
+msgid "No %s shareholders found."
+msgstr "[FR] No %s shareholders found."
+
+msgid "Search by name or email..."
+msgstr "[FR] Search by name or email..."
+
+msgid "UPRA Class Action"
+msgstr "[FR] UPRA Class Action"
+
+msgid "UPRA Class Action"
+msgstr "[FR] UPRA Class Action"
+
+msgid "Settings"
+msgstr "[FR] Settings"
+
+msgid "Settings"
+msgstr "[FR] Settings"
+
+msgid "Tools"
+msgstr "[FR] Tools"
+
+msgid "Tools"
+msgstr "[FR] Tools"
+
+msgid "Reports"
+msgstr "[FR] Reports"
+
+msgid "Reports"
+msgstr "[FR] Reports"
+
+msgid "General Settings"
+msgstr "[FR] General Settings"
+
+msgid "Email Settings"
+msgstr "[FR] Email Settings"
+
+msgid "Company Settings"
+msgstr "[FR] Company Settings"
+
+msgid "Duplicate Check"
+msgstr "[FR] Duplicate Check"
+
+msgid "Prevent duplicate registrations based on email and phone"
+msgstr "[FR] Prevent duplicate registrations based on email and phone"
+
+msgid "Data Retention (Days)"
+msgstr "[FR] Data Retention (Days)"
+
+msgid "Number of days to retain shareholder data (0 = unlimited)"
+msgstr "[FR] Number of days to retain shareholder data (0 = unlimited)"
+
+msgid "Email Notifications"
+msgstr "[FR] Email Notifications"
+
+msgid "Send confirmation emails to shareholders"
+msgstr "[FR] Send confirmation emails to shareholders"
+
+msgid "Admin Notifications"
+msgstr "[FR] Admin Notifications"
+
+msgid "Send notifications to admin when new shareholders register"
+msgstr "[FR] Send notifications to admin when new shareholders register"
+
+msgid "From Name"
+msgstr "[FR] From Name"
+
+msgid "From Email"
+msgstr "[FR] From Email"
+
+msgid "Supported Companies"
+msgstr "[FR] Supported Companies"
+
+msgid "UPRA Class Action Dashboard"
+msgstr "[FR] UPRA Class Action Dashboard"
+
+msgid "Total Shareholders"
+msgstr "[FR] Total Shareholders"
+
+msgid "Active Companies"
+msgstr "[FR] Active Companies"
+
+msgid "Database Version"
+msgstr "[FR] Database Version"
+
+msgid "Company Statistics"
+msgstr "[FR] Company Statistics"
+
+msgid "Company"
+msgstr "[FR] Company"
+
+msgid "Total Shares"
+msgstr "[FR] Total Shares"
+
+msgid "Shareholders"
+msgstr "[FR] Shareholders"
+
+msgid "Total Participation"
+msgstr "[FR] Total Participation"
+
+msgid "Actions"
+msgstr "[FR] Actions"
+
+msgid "View Details"
+msgstr "[FR] View Details"
+
+msgid "Export"
+msgstr "[FR] Export"
+
+msgid "Quick Actions"
+msgstr "[FR] Quick Actions"
+
+msgid "Settings"
+msgstr "[FR] Settings"
+
+msgid "Import/Export Tools"
+msgstr "[FR] Import/Export Tools"
+
+msgid "Generate Reports"
+msgstr "[FR] Generate Reports"
+
+msgid "UPRA Class Action Settings"
+msgstr "[FR] UPRA Class Action Settings"
+
+msgid "UPRA Class Action Tools"
+msgstr "[FR] UPRA Class Action Tools"
+
+msgid "Data Export"
+msgstr "[FR] Data Export"
+
+msgid "Export shareholder data for analysis or backup purposes."
+msgstr "[FR] Export shareholder data for analysis or backup purposes."
+
+msgid "Company"
+msgstr "[FR] Company"
+
+msgid "Select Company"
+msgstr "[FR] Select Company"
+
+msgid "Format"
+msgstr "[FR] Format"
+
+msgid "CSV"
+msgstr "[FR] CSV"
+
+msgid "JSON"
+msgstr "[FR] JSON"
+
+msgid "Excel"
+msgstr "[FR] Excel"
+
+msgid "Export Data"
+msgstr "[FR] Export Data"
+
+msgid "Bulk Email"
+msgstr "[FR] Bulk Email"
+
+msgid "Send emails to all shareholders of a specific company."
+msgstr "[FR] Send emails to all shareholders of a specific company."
+
+msgid "Company"
+msgstr "[FR] Company"
+
+msgid "Select Company"
+msgstr "[FR] Select Company"
+
+msgid "Subject"
+msgstr "[FR] Subject"
+
+msgid "Message"
+msgstr "[FR] Message"
+
+msgid "HTML tags are allowed."
+msgstr "[FR] HTML tags are allowed."
+
+msgid "Send Bulk Email"
+msgstr "[FR] Send Bulk Email"
+
+msgid "Database Maintenance"
+msgstr "[FR] Database Maintenance"
+
+msgid "Database maintenance and cleanup tools."
+msgstr "[FR] Database maintenance and cleanup tools."
+
+msgid "Clean Up Old Data"
+msgstr "[FR] Clean Up Old Data"
+
+msgid "Optimize Database"
+msgstr "[FR] Optimize Database"
+
+msgid "UPRA Class Action Reports"
+msgstr "[FR] UPRA Class Action Reports"
+
+msgid "%s Report"
+msgstr "[FR] %s Report"
+
+msgid "Total Shares"
+msgstr "[FR] Total Shares"
+
+msgid "Total Shareholders"
+msgstr "[FR] Total Shareholders"
+
+msgid "Total Participation"
+msgstr "[FR] Total Participation"
+
+msgid "View Detailed List"
+msgstr "[FR] View Detailed List"
+
+msgid "Generate PDF Report"
+msgstr "[FR] Generate PDF Report"
+
+msgid "Insufficient permissions"
+msgstr "[FR] Insufficient permissions"
+
+msgid "Security check failed"
+msgstr "[FR] Security check failed"
+
+msgid "Company is required"
+msgstr "[FR] Company is required"
+
+msgid "Export completed successfully"
+msgstr "[FR] Export completed successfully"
+
+msgid "Export failed"
+msgstr "[FR] Export failed"
+
+msgid "Insufficient permissions"
+msgstr "[FR] Insufficient permissions"
+
+msgid "Security check failed"
+msgstr "[FR] Security check failed"
+
+msgid "All fields are required"
+msgstr "[FR] All fields are required"
+
+msgid "Email sent to %d shareholders"
+msgstr "[FR] Email sent to %d shareholders"
+
+msgid "No emails were sent"
+msgstr "[FR] No emails were sent"
+
+msgid "Insufficient permissions"
+msgstr "[FR] Insufficient permissions"
+
+msgid "Security check failed"
+msgstr "[FR] Security check failed"
+
+msgid "Shareholder deleted successfully"
+msgstr "[FR] Shareholder deleted successfully"
+
+msgid "Failed to delete shareholder"
+msgstr "[FR] Failed to delete shareholder"
+
+msgid "Other"
+msgstr "[FR] Other"
+
+msgid "Select which companies this plugin should support."
+msgstr "[FR] Select which companies this plugin should support."
+
+msgid "Configure general plugin settings."
+msgstr "[FR] Configure general plugin settings."
+
+msgid "Configure email notification settings."
+msgstr "[FR] Configure email notification settings."
+
+msgid "Configure which companies are supported by this plugin."
+msgstr "[FR] Configure which companies are supported by this plugin."
+
+msgid "Delete"
+msgstr "[FR] Delete"
+
+msgid "Export Selected"
+msgstr "[FR] Export Selected"
+
+msgid "Send Email"
+msgstr "[FR] Send Email"
+
+msgid "%d shareholders deleted."
+msgstr "[FR] %d shareholders deleted."
+
+msgid "Selected shareholders exported."
+msgstr "[FR] Selected shareholders exported."
+
+msgid "Settings"
+msgstr "[FR] Settings"
+
+msgid "UPRA Class Action Summary"
+msgstr "[FR] UPRA Class Action Summary"
+
+msgid "Total Shareholders:"
+msgstr "[FR] Total Shareholders:"
+
+msgid "Active Companies:"
+msgstr "[FR] Active Companies:"
+
+msgid "View Dashboard"
+msgstr "[FR] View Dashboard"
+
+msgid "Security check failed. Please refresh the page and try again."
+msgstr "[FR] Security check failed. Please refresh the page and try again."
+
+msgid "No form data received. Please try again."
+msgstr "[FR] No form data received. Please try again."
+
+msgid "Failed to save data. Please try again."
+msgstr "[FR] Failed to save data. Please try again."
+
+msgid "Please enter your name"
+msgstr "[FR] Please enter your name"
+
+msgid "Please enter email address"
+msgstr "[FR] Please enter email address"
+
+msgid "Please enter valid phone number"
+msgstr "[FR] Please enter valid phone number"
+
+msgid "Please enter a valid email address"
+msgstr "[FR] Please enter a valid email address"
+
+msgid "Please enter a valid number for %s"
+msgstr "[FR] Please enter a valid number for %s"
+
+msgid "Validation failed"
+msgstr "[FR] Validation failed"
+
+msgid "Another entry matched with the phone number or email address you entered. Please contact admin@upra.fr, if you mistakenly submitted wrong information."
+msgstr "[FR] Another entry matched with the phone number or email address you entered. Please contact admin@upra.fr, if you mistakenly submitted wrong information."
+
+msgid "Insufficient permissions"
+msgstr "[FR] Insufficient permissions"
+
+msgid "Security check failed"
+msgstr "[FR] Security check failed"
+
+msgid "Bulk import completed successfully"
+msgstr "[FR] Bulk import completed successfully"
+
+msgid "Insufficient permissions"
+msgstr "[FR] Insufficient permissions"
+
+msgid "UPRA Registration - ATOS"
+msgstr "[FR] UPRA Registration - ATOS"
+
+msgid "UPRA Registration - URPEA"
+msgstr "[FR] UPRA Registration - URPEA"
+
+msgid "Union des Porteurs et Représentants d'Actions"
+msgstr "[FR] Union des Porteurs et Représentants d'Actions"
+
+msgid "Merci pour votre pré-inscription à l'UPRA - ATOS"
+msgstr "[FR] Merci pour votre pré-inscription à l'UPRA - ATOS"
+
+msgid "L'UPRA vous remercie de votre pré-inscription concernant les actions ATOS. Celle-ci a bien été prise en compte."
+msgstr "[FR] L'UPRA vous remercie de votre pré-inscription concernant les actions ATOS. Celle-ci a bien été prise en compte."
+
+msgid "Nous reviendrons vers vous d'ici mi-avril lorsque la plateforme applicative de gestion de procès de groupe aura été mise en place. Cette plateforme sécurisée répondra aux normes les plus strictes de respect de la vie privée."
+msgstr "[FR] Nous reviendrons vers vous d'ici mi-avril lorsque la plateforme applicative de gestion de procès de groupe aura été mise en place. Cette plateforme sécurisée répondra aux normes les plus strictes de respect de la vie privée."
+
+msgid "Vous recevrez également mi-avril un email vous indiquant la liste des pièces à préparer pour constituer votre dossier."
+msgstr "[FR] Vous recevrez également mi-avril un email vous indiquant la liste des pièces à préparer pour constituer votre dossier."
+
+msgid "Besoin d'aide ou d'informations ?"
+msgstr "[FR] Besoin d'aide ou d'informations ?"
+
+msgid "Si vous avez une question d'ici là, une seule adresse :"
+msgstr "[FR] Si vous avez une question d'ici là, une seule adresse :"
+
+msgid "Cordialement,"
+msgstr "[FR] Cordialement,"
+
+msgid "L'équipe de l'UPRA"
+msgstr "[FR] L'équipe de l'UPRA"
+
+msgid "Cet email a été envoyé automatiquement suite à votre inscription. Merci de ne pas y répondre directement."
+msgstr "[FR] Cet email a été envoyé automatiquement suite à votre inscription. Merci de ne pas y répondre directement."
+
+msgid "Thank you for your URPEA registration"
+msgstr "[FR] Thank you for your URPEA registration"
+
+msgid "UPRA thanks you for your pre-registration regarding URPEA shares. Your registration has been successfully recorded."
+msgstr "[FR] UPRA thanks you for your pre-registration regarding URPEA shares. Your registration has been successfully recorded."
+
+msgid "We will contact you when our class action management platform is ready. This secure platform will meet the strictest privacy standards."
+msgstr "[FR] We will contact you when our class action management platform is ready. This secure platform will meet the strictest privacy standards."
+
+msgid "If you have any questions, please contact us at:"
+msgstr "[FR] If you have any questions, please contact us at:"
+
+msgid "Best regards,"
+msgstr "[FR] Best regards,"
+
+msgid "The UPRA Team"
+msgstr "[FR] The UPRA Team"
+
+msgid "Thank you for your %s registration"
+msgstr "[FR] Thank you for your %s registration"
+
+msgid "UPRA thanks you for your pre-registration regarding %s shares. Your registration has been successfully recorded."
+msgstr "[FR] UPRA thanks you for your pre-registration regarding %s shares. Your registration has been successfully recorded."
+
+msgid "We will contact you when our class action management platform is ready."
+msgstr "[FR] We will contact you when our class action management platform is ready."
+
+msgid "If you have any questions, please contact us at:"
+msgstr "[FR] If you have any questions, please contact us at:"
+
+msgid "Best regards,"
+msgstr "[FR] Best regards,"
+
+msgid "The UPRA Team"
+msgstr "[FR] The UPRA Team"
+
+msgid "New %s Shareholder Registration"
+msgstr "[FR] New %s Shareholder Registration"
+
+msgid "Name"
+msgstr "[FR] Name"
+
+msgid "Email"
+msgstr "[FR] Email"
+
+msgid "Phone"
+msgstr "[FR] Phone"
+
+msgid "Stock Count"
+msgstr "[FR] Stock Count"
+
+msgid "Purchase Price"
+msgstr "[FR] Purchase Price"
+
+msgid "Sell Price"
+msgstr "[FR] Sell Price"
+
+msgid "Loss"
+msgstr "[FR] Loss"
+
+msgid "IP Address"
+msgstr "[FR] IP Address"
+
+msgid "Country"
+msgstr "[FR] Country"
+
+msgid "Remarks"
+msgstr "[FR] Remarks"
+
+msgid "Registration time:"
+msgstr "[FR] Registration time:"
+
+msgid "You are not currently logged in."
+msgstr "[FR] You are not currently logged in."
+
+msgid "Data submitted successfully!"
+msgstr "[FR] Data submitted successfully!"
+
+msgid "An error occurred. Please try again."
+msgstr "[FR] An error occurred. Please try again."
+
+msgid "Please fill out the following fields:"
+msgstr "[FR] Please fill out the following fields:"
+
+msgid "%s Statistics"
+msgstr "[FR] %s Statistics"
+
+msgid "Personal Information"
+msgstr "[FR] Personal Information"
+
+msgid "Stock Information"
+msgstr "[FR] Stock Information"
+
+msgid "Additional Information"
+msgstr "[FR] Additional Information"
+
+msgid "Submitting..."
+msgstr "[FR] Submitting..."
+
+msgid "Total Shares:"
+msgstr "[FR] Total Shares:"
+
+msgid "Shareholders:"
+msgstr "[FR] Shareholders:"
+
+msgid "Total Participation:"
+msgstr "[FR] Total Participation:"
+
+msgid "%s Shares: "
+msgstr "[FR] %s Shares: "
+
+msgid "Shareholders: "
+msgstr "[FR] Shareholders: "
+
+msgid "Total Shares:"
+msgstr "[FR] Total Shares:"
+
+msgid "Total Shareholders:"
+msgstr "[FR] Total Shareholders:"
+
+msgid "Your Name"
+msgstr "[FR] Your Name"
+
+msgid "Email address"
+msgstr "[FR] Email address"
+
+msgid "Mobile Phone"
+msgstr "[FR] Mobile Phone"
+
+msgid "Nombre d'actions détenues"
+msgstr "[FR] Nombre d'actions détenues"
+
+msgid "Buy Price"
+msgstr "[FR] Buy Price"
+
+msgid "Sell Price"
+msgstr "[FR] Sell Price"
+
+msgid "Perte Totale"
+msgstr "[FR] Perte Totale"
+
+msgid "Remarques"
+msgstr "[FR] Remarques"
+
+msgid "Your Name (Required)"
+msgstr "[FR] Your Name (Required)"
+
+msgid "Your Email Address (Required)"
+msgstr "[FR] Your Email Address (Required)"
+
+msgid "Mobile Phone (Required)"
+msgstr "[FR] Mobile Phone (Required)"
+
+msgid "Nombre d'actions détenues"
+msgstr "[FR] Nombre d'actions détenues"
+
+msgid "Buy Price"
+msgstr "[FR] Buy Price"
+
+msgid "Sell Price"
+msgstr "[FR] Sell Price"
+
+msgid "Perte Totale"
+msgstr "[FR] Perte Totale"
+
+msgid "Remarques"
+msgstr "[FR] Remarques"
+
+msgid "Submit"
+msgstr "[FR] Submit"
+
+msgid "Your Name"
+msgstr "[FR] Your Name"
+
+msgid "Email address"
+msgstr "[FR] Email address"
+
+msgid "Mobile Phone"
+msgstr "[FR] Mobile Phone"
+
+msgid "Number of Shares Held"
+msgstr "[FR] Number of Shares Held"
+
+msgid "Purchase Price"
+msgstr "[FR] Purchase Price"
+
+msgid "Sell Price"
+msgstr "[FR] Sell Price"
+
+msgid "Total Loss"
+msgstr "[FR] Total Loss"
+
+msgid "Remarks"
+msgstr "[FR] Remarks"
+
+msgid "Your Name (Required)"
+msgstr "[FR] Your Name (Required)"
+
+msgid "Your Email Address (Required)"
+msgstr "[FR] Your Email Address (Required)"
+
+msgid "Mobile Phone (Required)"
+msgstr "[FR] Mobile Phone (Required)"
+
+msgid "Number of shares held"
+msgstr "[FR] Number of shares held"
+
+msgid "Purchase price per share"
+msgstr "[FR] Purchase price per share"
+
+msgid "Sell price per share"
+msgstr "[FR] Sell price per share"
+
+msgid "Total financial loss"
+msgstr "[FR] Total financial loss"
+
+msgid "Additional comments"
+msgstr "[FR] Additional comments"
+
+msgid "Submit Registration"
+msgstr "[FR] Submit Registration"
+
+msgid "ATOS Shareholder Registration"
+msgstr "[FR] ATOS Shareholder Registration"
+
+msgid "Please provide your ATOS shareholding information for the class action lawsuit."
+msgstr "[FR] Please provide your ATOS shareholding information for the class action lawsuit."
+
+msgid "Your Name"
+msgstr "[FR] Your Name"
+
+msgid "Your Name (Required)"
+msgstr "[FR] Your Name (Required)"
+
+msgid "Email address"
+msgstr "[FR] Email address"
+
+msgid "Your Email Address (Required)"
+msgstr "[FR] Your Email Address (Required)"
+
+msgid "Mobile Phone"
+msgstr "[FR] Mobile Phone"
+
+msgid "Mobile Phone (Required)"
+msgstr "[FR] Mobile Phone (Required)"
+
+msgid "Nombre d'actions détenues"
+msgstr "[FR] Nombre d'actions détenues"
+
+msgid "Nombre d'actions détenues"
+msgstr "[FR] Nombre d'actions détenues"
+
+msgid "Buy Price"
+msgstr "[FR] Buy Price"
+
+msgid "Buy Price"
+msgstr "[FR] Buy Price"
+
+msgid "Sell Price"
+msgstr "[FR] Sell Price"
+
+msgid "Sell Price"
+msgstr "[FR] Sell Price"
+
+msgid "Perte Totale"
+msgstr "[FR] Perte Totale"
+
+msgid "Perte Totale"
+msgstr "[FR] Perte Totale"
+
+msgid "Remarques"
+msgstr "[FR] Remarques"
+
+msgid "Remarques"
+msgstr "[FR] Remarques"
+
+msgid "Submit"
+msgstr "[FR] Submit"
+
+msgid "Vos données ont été comptabilisées avec succès! <br> Veuillez rafraichir la page pour voir le nouveau total d'actions cumulées"
+msgstr "[FR] Vos données ont été comptabilisées avec succès! <br> Veuillez rafraichir la page pour voir le nouveau total d'actions cumulées"
+
+msgid "UPRA Registration - ATOS"
+msgstr "[FR] UPRA Registration - ATOS"
+
+msgid "ATOS Class Action - Important Update"
+msgstr "[FR] ATOS Class Action - Important Update"
+
+msgid "ATOS Class Action - Next Steps"
+msgstr "[FR] ATOS Class Action - Next Steps"
+
+msgid "New %s Shareholder Registration"
+msgstr "[FR] New %s Shareholder Registration"
+
+msgid "Name"
+msgstr "[FR] Name"
+
+msgid "Email"
+msgstr "[FR] Email"
+
+msgid "Phone"
+msgstr "[FR] Phone"
+
+msgid "Stock Count"
+msgstr "[FR] Stock Count"
+
+msgid "Purchase Price"
+msgstr "[FR] Purchase Price"
+
+msgid "Sell Price"
+msgstr "[FR] Sell Price"
+
+msgid "Loss"
+msgstr "[FR] Loss"
+
+msgid "IP Address"
+msgstr "[FR] IP Address"
+
+msgid "Country"
+msgstr "[FR] Country"
+
+msgid "Remarks"
+msgstr "[FR] Remarks"
+
+msgid "Registration time:"
+msgstr "[FR] Registration time:"
+
+msgid "Your Name"
+msgstr "[FR] Your Name"
+
+msgid "Email address"
+msgstr "[FR] Email address"
+
+msgid "Mobile Phone"
+msgstr "[FR] Mobile Phone"
+
+msgid "Nombre d'actions détenues"
+msgstr "[FR] Nombre d'actions détenues"
+
+msgid "Buy Price"
+msgstr "[FR] Buy Price"
+
+msgid "Sell Price"
+msgstr "[FR] Sell Price"
+
+msgid "Perte Totale"
+msgstr "[FR] Perte Totale"
+
+msgid "Remarques"
+msgstr "[FR] Remarques"
+
+msgid "Submit"
+msgstr "[FR] Submit"
+
+msgid "You are not currently logged in."
+msgstr "[FR] You are not currently logged in."
+
+msgid "UPRA Class Action"
+msgstr "[FR] UPRA Class Action"
+
+msgid "https://upra.fr"
+msgstr "[FR] https://upra.fr"
+
+msgid "A comprehensive plugin for collecting shareholder data for class action lawsuits. Supports multiple companies including ATOS, URPEA, and others."
+msgstr "[FR] A comprehensive plugin for collecting shareholder data for class action lawsuits. Supports multiple companies including ATOS, URPEA, and others."
+
+msgid "UPRA"
+msgstr "[FR] UPRA"

@@ -1,0 +1,1385 @@
+# UPRA Class Action Plugin Translation Template
+# Copyright (C) 2025 UPRA
+# This file is distributed under the same license as the UPRA Class Action plugin.
+# FIRST AUTHOR <me@mrashid.me>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UPRA Class Action 1.0.0\n"
+"Report-Msgid-Bugs-To: info@upra.fr\n"
+"POT-Creation-Date: 2025-01-20 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: upra-class-action\n"
+
+#: admin/class-admin-menu.php:45
+msgid "UPRA Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:46
+msgid "UPRA Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:64
+#, php-format
+msgid "%s Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:75
+msgid "Tools & Export"
+msgstr ""
+
+#: admin/class-admin-menu.php:76
+msgid "Tools"
+msgstr ""
+
+#: admin/class-admin-menu.php:83
+msgid "Statistics"
+msgstr ""
+
+#: admin/class-admin-menu.php:84
+msgid "Statistics"
+msgstr ""
+
+#: admin/class-admin-menu.php:104
+msgid "Invalid company specified."
+msgstr ""
+
+#: admin/class-admin-menu.php:118
+msgid "Select a Company"
+msgstr ""
+
+#: admin/class-admin-menu.php:119
+msgid "Choose a company to view its shareholder data:"
+msgstr ""
+
+#: admin/class-admin-menu.php:140
+msgid "Shareholders:"
+msgstr ""
+
+#: admin/class-admin-menu.php:141
+msgid "Total Shares:"
+msgstr ""
+
+#: admin/class-admin-menu.php:142
+msgid "Participation:"
+msgstr ""
+
+#: admin/class-admin-menu.php:146
+msgid "View Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:149
+msgid "Export Data"
+msgstr ""
+
+#: admin/class-admin-menu.php:189
+msgid "Send Bulk Email"
+msgstr ""
+
+#: admin/class-admin-menu.php:197
+msgid "Search Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:231
+msgid "Total Shares"
+msgstr ""
+
+#: admin/class-admin-menu.php:236
+msgid "Total Participation"
+msgstr ""
+
+#: admin/class-admin-menu.php:241
+msgid "Total Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:253
+msgid "UPRA Shareholders Tools"
+msgstr ""
+
+#: admin/class-admin-menu.php:273
+msgid "Select Company"
+msgstr ""
+
+#: admin/class-admin-menu.php:276
+msgid "Select Company"
+msgstr ""
+
+#: admin/class-admin-menu.php:286
+#, php-format
+msgid "Export %s shareholder data in various formats."
+msgstr ""
+
+#: admin/class-admin-menu.php:293
+msgid "Export CSV"
+msgstr ""
+
+#: admin/class-admin-menu.php:296
+msgid "Export JSON"
+msgstr ""
+
+#: admin/class-admin-menu.php:299
+msgid "Export Excel"
+msgstr ""
+
+#: admin/class-admin-menu.php:306
+msgid "Email Tools"
+msgstr ""
+
+#: admin/class-admin-menu.php:307
+#, php-format
+msgid "Send bulk emails to %s shareholders."
+msgstr ""
+
+#: admin/class-admin-menu.php:312
+msgid "Send Bulk Email"
+msgstr ""
+
+#: admin/class-admin-menu.php:327
+#, php-format
+msgid "%s Statistics"
+msgstr ""
+
+#: admin/class-admin-menu.php:335
+msgid "Total Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:340
+msgid "Total Shares"
+msgstr ""
+
+#: admin/class-admin-menu.php:345
+msgid "Total Participation"
+msgstr ""
+
+#: admin/class-admin-menu.php:350
+msgid "View Details"
+msgstr ""
+
+#: admin/class-admin-menu.php:353
+msgid "Export Data"
+msgstr ""
+
+#: admin/class-admin-menu.php:365
+#, php-format
+msgid "Send Bulk Email to %s Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:366
+#, php-format
+msgid "This will send an email to all %d %s shareholders."
+msgstr ""
+
+#: admin/class-admin-menu.php:382
+msgid "Subject"
+msgstr ""
+
+#: admin/class-admin-menu.php:389
+msgid "Message"
+msgstr ""
+
+#: admin/class-admin-menu.php:398
+msgid "HTML formatting is supported."
+msgstr ""
+
+#: admin/class-admin-menu.php:403
+msgid "Are you sure you want to send this email to all shareholders?"
+msgstr ""
+
+#: admin/class-admin-menu.php:404
+#, php-format
+msgid "Send to %d Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:407
+msgid "Cancel"
+msgstr ""
+
+#: admin/class-admin-menu.php:417
+msgid "UPRA Shareholders Statistics"
+msgstr ""
+
+#: admin/class-admin-menu.php:429
+msgid "Statistics"
+msgstr ""
+
+#: admin/class-admin-menu.php:449
+msgid "Total Shareholders"
+msgstr ""
+
+#: admin/class-admin-menu.php:456
+msgid "Total Shares"
+msgstr ""
+
+#: admin/class-admin-menu.php:463
+msgid "Total Participation"
+msgstr ""
+
+#: admin/class-admin-menu.php:470
+msgid "View Details"
+msgstr ""
+
+#: admin/class-admin-menu.php:473
+msgid "Export Data"
+msgstr ""
+
+#: admin/class-admin-menu.php:485
+msgid "Shareholders per page"
+msgstr ""
+
+#: admin/class-list-table.php:58
+msgid "ID"
+msgstr ""
+
+#: admin/class-list-table.php:59
+msgid "Name"
+msgstr ""
+
+#: admin/class-list-table.php:60
+msgid "Email"
+msgstr ""
+
+#: admin/class-list-table.php:61
+msgid "Phone"
+msgstr ""
+
+#: admin/class-list-table.php:62
+msgid "Stock"
+msgstr ""
+
+#: admin/class-list-table.php:63
+msgid "Purchase Price"
+msgstr ""
+
+#: admin/class-list-table.php:64
+msgid "Sell Price"
+msgstr ""
+
+#: admin/class-list-table.php:65
+msgid "Loss"
+msgstr ""
+
+#: admin/class-list-table.php:66
+msgid "IP Address"
+msgstr ""
+
+#: admin/class-list-table.php:67
+msgid "Country"
+msgstr ""
+
+#: admin/class-list-table.php:68
+msgid "Remarks"
+msgstr ""
+
+#: admin/class-list-table.php:69
+msgid "Registration Date"
+msgstr ""
+
+#: admin/class-list-table.php:70
+msgid "Actions"
+msgstr ""
+
+#: admin/class-list-table.php:86
+msgid "Delete"
+msgstr ""
+
+#: admin/class-list-table.php:87
+msgid "Export Selected"
+msgstr ""
+
+#: admin/class-list-table.php:88
+msgid "Send Email to Selected"
+msgstr ""
+
+#: admin/class-list-table.php:155
+msgid "Edit"
+msgstr ""
+
+#: admin/class-list-table.php:160
+msgid "View Details"
+msgstr ""
+
+#: admin/class-list-table.php:165
+msgid "Delete"
+msgstr ""
+
+#: admin/class-list-table.php:183
+msgid "Edit"
+msgstr ""
+
+#: admin/class-list-table.php:188
+msgid "View"
+msgstr ""
+
+#: admin/class-list-table.php:194
+msgid "Email"
+msgstr ""
+
+#: admin/class-list-table.php:199
+msgid "Delete"
+msgstr ""
+
+#: admin/class-list-table.php:267
+msgid "Security check failed"
+msgstr ""
+
+#: admin/class-list-table.php:272
+msgid "You do not have permission to perform this action"
+msgstr ""
+
+#: admin/class-list-table.php:278
+msgid "No shareholders selected."
+msgstr ""
+
+#: admin/class-list-table.php:295
+#, php-format
+msgid "%d shareholders deleted successfully."
+msgstr ""
+
+#: admin/class-list-table.php:298
+msgid "No shareholders were deleted."
+msgstr ""
+
+#: admin/class-list-table.php:314
+msgid "No shareholders found for export."
+msgstr ""
+
+#: admin/class-list-table.php:404
+#, php-format
+msgid "%d shareholders deleted."
+msgstr ""
+
+#: admin/class-list-table.php:411
+msgid "Selected shareholders exported."
+msgstr ""
+
+#: admin/class-list-table.php:451
+msgid "All dates"
+msgstr ""
+
+#: admin/class-list-table.php:452
+msgid "Today"
+msgstr ""
+
+#: admin/class-list-table.php:453
+msgid "This week"
+msgstr ""
+
+#: admin/class-list-table.php:454
+msgid "This month"
+msgstr ""
+
+#: admin/class-list-table.php:456
+msgid "Filter"
+msgstr ""
+
+#: admin/class-list-table.php:467
+#, php-format
+msgid "No %s shareholders found."
+msgstr ""
+
+#: admin/class-list-table.php:485
+msgid "Search by name or email..."
+msgstr ""
+
+#: includes/class-admin.php:74
+msgid "UPRA Class Action"
+msgstr ""
+
+#: includes/class-admin.php:75
+msgid "UPRA Class Action"
+msgstr ""
+
+#: includes/class-admin.php:84
+msgid "Settings"
+msgstr ""
+
+#: includes/class-admin.php:85
+msgid "Settings"
+msgstr ""
+
+#: includes/class-admin.php:94
+msgid "Tools"
+msgstr ""
+
+#: includes/class-admin.php:95
+msgid "Tools"
+msgstr ""
+
+#: includes/class-admin.php:104
+msgid "Reports"
+msgstr ""
+
+#: includes/class-admin.php:105
+msgid "Reports"
+msgstr ""
+
+#: includes/class-admin.php:123
+msgid "General Settings"
+msgstr ""
+
+#: includes/class-admin.php:131
+msgid "Email Settings"
+msgstr ""
+
+#: includes/class-admin.php:139
+msgid "Company Settings"
+msgstr ""
+
+#: includes/class-admin.php:154
+msgid "Duplicate Check"
+msgstr ""
+
+#: includes/class-admin.php:160
+msgid "Prevent duplicate registrations based on email and phone"
+msgstr ""
+
+#: includes/class-admin.php:165
+msgid "Data Retention (Days)"
+msgstr ""
+
+#: includes/class-admin.php:171
+msgid "Number of days to retain shareholder data (0 = unlimited)"
+msgstr ""
+
+#: includes/class-admin.php:178
+msgid "Email Notifications"
+msgstr ""
+
+#: includes/class-admin.php:184
+msgid "Send confirmation emails to shareholders"
+msgstr ""
+
+#: includes/class-admin.php:189
+msgid "Admin Notifications"
+msgstr ""
+
+#: includes/class-admin.php:195
+msgid "Send notifications to admin when new shareholders register"
+msgstr ""
+
+#: includes/class-admin.php:200
+msgid "From Name"
+msgstr ""
+
+#: includes/class-admin.php:209
+msgid "From Email"
+msgstr ""
+
+#: includes/class-admin.php:218
+msgid "Supported Companies"
+msgstr ""
+
+#: includes/class-admin.php:230
+msgid "UPRA Class Action Dashboard"
+msgstr ""
+
+#: includes/class-admin.php:244
+msgid "Total Shareholders"
+msgstr ""
+
+#: includes/class-admin.php:249
+msgid "Active Companies"
+msgstr ""
+
+#: includes/class-admin.php:254
+msgid "Database Version"
+msgstr ""
+
+#: includes/class-admin.php:261
+msgid "Company Statistics"
+msgstr ""
+
+#: includes/class-admin.php:266
+msgid "Company"
+msgstr ""
+
+#: includes/class-admin.php:267
+msgid "Total Shares"
+msgstr ""
+
+#: includes/class-admin.php:268
+msgid "Shareholders"
+msgstr ""
+
+#: includes/class-admin.php:269
+msgid "Total Participation"
+msgstr ""
+
+#: includes/class-admin.php:270
+msgid "Actions"
+msgstr ""
+
+#: includes/class-admin.php:280
+msgid "View Details"
+msgstr ""
+
+#: includes/class-admin.php:283
+msgid "Export"
+msgstr ""
+
+#: includes/class-admin.php:293
+msgid "Quick Actions"
+msgstr ""
+
+#: includes/class-admin.php:297
+msgid "Settings"
+msgstr ""
+
+#: includes/class-admin.php:300
+msgid "Import/Export Tools"
+msgstr ""
+
+#: includes/class-admin.php:303
+msgid "Generate Reports"
+msgstr ""
+
+#: includes/class-admin.php:313
+msgid "UPRA Class Action Settings"
+msgstr ""
+
+#: includes/class-admin.php:324
+msgid "UPRA Class Action Tools"
+msgstr ""
+
+#: includes/class-admin.php:330
+msgid "Data Export"
+msgstr ""
+
+#: includes/class-admin.php:331
+msgid "Export shareholder data for analysis or backup purposes."
+msgstr ""
+
+#: includes/class-admin.php:337
+msgid "Company"
+msgstr ""
+
+#: includes/class-admin.php:340
+msgid "Select Company"
+msgstr ""
+
+#: includes/class-admin.php:347
+msgid "Format"
+msgstr ""
+
+#: includes/class-admin.php:350
+msgid "CSV"
+msgstr ""
+
+#: includes/class-admin.php:351
+msgid "JSON"
+msgstr ""
+
+#: includes/class-admin.php:352
+msgid "Excel"
+msgstr ""
+
+#: includes/class-admin.php:358
+msgid "Export Data"
+msgstr ""
+
+#: includes/class-admin.php:365
+msgid "Bulk Email"
+msgstr ""
+
+#: includes/class-admin.php:366
+msgid "Send emails to all shareholders of a specific company."
+msgstr ""
+
+#: includes/class-admin.php:372
+msgid "Company"
+msgstr ""
+
+#: includes/class-admin.php:375
+msgid "Select Company"
+msgstr ""
+
+#: includes/class-admin.php:382
+msgid "Subject"
+msgstr ""
+
+#: includes/class-admin.php:388
+msgid "Message"
+msgstr ""
+
+#: includes/class-admin.php:392
+msgid "HTML tags are allowed."
+msgstr ""
+
+#: includes/class-admin.php:397
+msgid "Send Bulk Email"
+msgstr ""
+
+#: includes/class-admin.php:403
+msgid "Database Maintenance"
+msgstr ""
+
+#: includes/class-admin.php:404
+msgid "Database maintenance and cleanup tools."
+msgstr ""
+
+#: includes/class-admin.php:408
+msgid "Clean Up Old Data"
+msgstr ""
+
+#: includes/class-admin.php:411
+msgid "Optimize Database"
+msgstr ""
+
+#: includes/class-admin.php:421
+msgid "UPRA Class Action Reports"
+msgstr ""
+
+#: includes/class-admin.php:439
+#, php-format
+msgid "%s Report"
+msgstr ""
+
+#: includes/class-admin.php:445
+msgid "Total Shares"
+msgstr ""
+
+#: includes/class-admin.php:450
+msgid "Total Shareholders"
+msgstr ""
+
+#: includes/class-admin.php:455
+msgid "Total Participation"
+msgstr ""
+
+#: includes/class-admin.php:462
+msgid "View Detailed List"
+msgstr ""
+
+#: includes/class-admin.php:465
+msgid "Generate PDF Report"
+msgstr ""
+
+#: includes/class-admin.php:507
+msgid "Insufficient permissions"
+msgstr ""
+
+#: includes/class-admin.php:512
+msgid "Security check failed"
+msgstr ""
+
+#: includes/class-admin.php:517
+msgid "Company is required"
+msgstr ""
+
+#: includes/class-admin.php:527
+msgid "Export completed successfully"
+msgstr ""
+
+#: includes/class-admin.php:531
+msgid "Export failed"
+msgstr ""
+
+#: includes/class-admin.php:540
+msgid "Insufficient permissions"
+msgstr ""
+
+#: includes/class-admin.php:545
+msgid "Security check failed"
+msgstr ""
+
+#: includes/class-admin.php:552
+msgid "All fields are required"
+msgstr ""
+
+#: includes/class-admin.php:558
+#, php-format
+msgid "Email sent to %d shareholders"
+msgstr ""
+
+#: includes/class-admin.php:560
+msgid "No emails were sent"
+msgstr ""
+
+#: includes/class-admin.php:571
+msgid "Insufficient permissions"
+msgstr ""
+
+#: includes/class-admin.php:576
+msgid "Security check failed"
+msgstr ""
+
+#: includes/class-admin.php:583
+msgid "Shareholder deleted successfully"
+msgstr ""
+
+#: includes/class-admin.php:586
+msgid "Failed to delete shareholder"
+msgstr ""
+
+#: includes/class-admin.php:614
+msgid "Other"
+msgstr ""
+
+#: includes/class-admin.php:630
+msgid "Select which companies this plugin should support."
+msgstr ""
+
+#: includes/class-admin.php:637
+msgid "Configure general plugin settings."
+msgstr ""
+
+#: includes/class-admin.php:641
+msgid "Configure email notification settings."
+msgstr ""
+
+#: includes/class-admin.php:645
+msgid "Configure which companies are supported by this plugin."
+msgstr ""
+
+#: includes/class-admin.php:653
+msgid "Delete"
+msgstr ""
+
+#: includes/class-admin.php:654
+msgid "Export Selected"
+msgstr ""
+
+#: includes/class-admin.php:655
+msgid "Send Email"
+msgstr ""
+
+#: includes/class-admin.php:667
+#, php-format
+msgid "%d shareholders deleted."
+msgstr ""
+
+#: includes/class-admin.php:675
+msgid "Selected shareholders exported."
+msgstr ""
+
+#: includes/class-admin.php:708
+msgid "Settings"
+msgstr ""
+
+#: includes/class-admin.php:720
+msgid "UPRA Class Action Summary"
+msgstr ""
+
+#: includes/class-admin.php:735
+msgid "Total Shareholders:"
+msgstr ""
+
+#: includes/class-admin.php:736
+msgid "Active Companies:"
+msgstr ""
+
+#: includes/class-admin.php:738
+msgid "View Dashboard"
+msgstr ""
+
+#: includes/class-ajax-handler.php:64
+msgid "Security check failed. Please refresh the page and try again."
+msgstr ""
+
+#: includes/class-ajax-handler.php:70
+msgid "No form data received. Please try again."
+msgstr ""
+
+#: includes/class-ajax-handler.php:111
+msgid "Failed to save data. Please try again."
+msgstr ""
+
+#: includes/class-ajax-handler.php:143
+msgid "Please enter your name"
+msgstr ""
+
+#: includes/class-ajax-handler.php:144
+msgid "Please enter email address"
+msgstr ""
+
+#: includes/class-ajax-handler.php:145
+msgid "Please enter valid phone number"
+msgstr ""
+
+#: includes/class-ajax-handler.php:150
+msgid "Please enter a valid email address"
+msgstr ""
+
+#: includes/class-ajax-handler.php:157
+#, php-format
+msgid "Please enter a valid number for %s"
+msgstr ""
+
+#: includes/class-ajax-handler.php:165
+msgid "Validation failed"
+msgstr ""
+
+#: includes/class-ajax-handler.php:177
+msgid "Another entry matched with the phone number or email address you entered. Please contact admin@upra.fr, if you mistakenly submitted wrong information."
+msgstr ""
+
+#: includes/class-ajax-handler.php:256
+msgid "Insufficient permissions"
+msgstr ""
+
+#: includes/class-ajax-handler.php:261
+msgid "Security check failed"
+msgstr ""
+
+#: includes/class-ajax-handler.php:275
+msgid "Bulk import completed successfully"
+msgstr ""
+
+#: includes/class-ajax-handler.php:285
+msgid "Insufficient permissions"
+msgstr ""
+
+#: includes/class-email-handler.php:72
+msgid "UPRA Registration - ATOS"
+msgstr ""
+
+#: includes/class-email-handler.php:73
+msgid "UPRA Registration - URPEA"
+msgstr ""
+
+#: includes/class-email-handler.php:93
+msgid "Union des Porteurs et Représentants d'Actions"
+msgstr ""
+
+#: includes/class-email-handler.php:96
+msgid "Merci pour votre pré-inscription à l'UPRA - ATOS"
+msgstr ""
+
+#: includes/class-email-handler.php:98
+msgid "L'UPRA vous remercie de votre pré-inscription concernant les actions ATOS. Celle-ci a bien été prise en compte."
+msgstr ""
+
+#: includes/class-email-handler.php:100
+msgid "Nous reviendrons vers vous d'ici mi-avril lorsque la plateforme applicative de gestion de procès de groupe aura été mise en place. Cette plateforme sécurisée répondra aux normes les plus strictes de respect de la vie privée."
+msgstr ""
+
+#: includes/class-email-handler.php:102
+msgid "Vous recevrez également mi-avril un email vous indiquant la liste des pièces à préparer pour constituer votre dossier."
+msgstr ""
+
+#: includes/class-email-handler.php:105
+msgid "Besoin d'aide ou d'informations ?"
+msgstr ""
+
+#: includes/class-email-handler.php:106
+msgid "Si vous avez une question d'ici là, une seule adresse :"
+msgstr ""
+
+#: includes/class-email-handler.php:111
+msgid "Cordialement,"
+msgstr ""
+
+#: includes/class-email-handler.php:112
+msgid "L'équipe de l'UPRA"
+msgstr ""
+
+#: includes/class-email-handler.php:114
+msgid "Cet email a été envoyé automatiquement suite à votre inscription. Merci de ne pas y répondre directement."
+msgstr ""
+
+#: includes/class-email-handler.php:136
+msgid "Thank you for your URPEA registration"
+msgstr ""
+
+#: includes/class-email-handler.php:138
+msgid "UPRA thanks you for your pre-registration regarding URPEA shares. Your registration has been successfully recorded."
+msgstr ""
+
+#: includes/class-email-handler.php:140
+msgid "We will contact you when our class action management platform is ready. This secure platform will meet the strictest privacy standards."
+msgstr ""
+
+#: includes/class-email-handler.php:142
+msgid "If you have any questions, please contact us at:"
+msgstr ""
+
+#: includes/class-email-handler.php:146
+msgid "Best regards,"
+msgstr ""
+
+#: includes/class-email-handler.php:147
+msgid "The UPRA Team"
+msgstr ""
+
+#: includes/class-email-handler.php:165
+#, php-format
+msgid "Thank you for your %s registration"
+msgstr ""
+
+#: includes/class-email-handler.php:167
+#, php-format
+msgid "UPRA thanks you for your pre-registration regarding %s shares. Your registration has been successfully recorded."
+msgstr ""
+
+#: includes/class-email-handler.php:169
+msgid "We will contact you when our class action management platform is ready."
+msgstr ""
+
+#: includes/class-email-handler.php:171
+msgid "If you have any questions, please contact us at:"
+msgstr ""
+
+#: includes/class-email-handler.php:175
+msgid "Best regards,"
+msgstr ""
+
+#: includes/class-email-handler.php:176
+msgid "The UPRA Team"
+msgstr ""
+
+#: includes/class-email-handler.php:188
+#, php-format
+msgid "New %s Shareholder Registration"
+msgstr ""
+
+#: includes/class-email-handler.php:193
+msgid "Name"
+msgstr ""
+
+#: includes/class-email-handler.php:194
+msgid "Email"
+msgstr ""
+
+#: includes/class-email-handler.php:195
+msgid "Phone"
+msgstr ""
+
+#: includes/class-email-handler.php:196
+msgid "Stock Count"
+msgstr ""
+
+#: includes/class-email-handler.php:197
+msgid "Purchase Price"
+msgstr ""
+
+#: includes/class-email-handler.php:198
+msgid "Sell Price"
+msgstr ""
+
+#: includes/class-email-handler.php:199
+msgid "Loss"
+msgstr ""
+
+#: includes/class-email-handler.php:200
+msgid "IP Address"
+msgstr ""
+
+#: includes/class-email-handler.php:201
+msgid "Country"
+msgstr ""
+
+#: includes/class-email-handler.php:203
+msgid "Remarks"
+msgstr ""
+
+#: includes/class-email-handler.php:206
+msgid "Registration time:"
+msgstr ""
+
+#: includes/class-email-handler.php:242
+msgid "You are not currently logged in."
+msgstr ""
+
+#: includes/class-frontend.php:102
+msgid "Data submitted successfully!"
+msgstr ""
+
+#: includes/class-frontend.php:103
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: includes/class-frontend.php:104
+msgid "Please fill out the following fields:"
+msgstr ""
+
+#: includes/class-frontend.php:145
+#, php-format
+msgid "%s Statistics"
+msgstr ""
+
+#: includes/class-frontend.php:179
+msgid "Personal Information"
+msgstr ""
+
+#: includes/class-frontend.php:207
+msgid "Stock Information"
+msgstr ""
+
+#: includes/class-frontend.php:244
+msgid "Additional Information"
+msgstr ""
+
+#: includes/class-frontend.php:260
+msgid "Submitting..."
+msgstr ""
+
+#: includes/class-frontend.php:281
+msgid "Total Shares:"
+msgstr ""
+
+#: includes/class-frontend.php:286
+msgid "Shareholders:"
+msgstr ""
+
+#: includes/class-frontend.php:291
+msgid "Total Participation:"
+msgstr ""
+
+#: includes/class-frontend.php:299
+#, php-format
+msgid "%s Shares: "
+msgstr ""
+
+#: includes/class-frontend.php:301
+msgid "Shareholders: "
+msgstr ""
+
+#: includes/class-frontend.php:306
+msgid "Total Shares:"
+msgstr ""
+
+#: includes/class-frontend.php:307
+msgid "Total Shareholders:"
+msgstr ""
+
+#: includes/class-frontend.php:325
+msgid "Your Name"
+msgstr ""
+
+#: includes/class-frontend.php:326
+msgid "Email address"
+msgstr ""
+
+#: includes/class-frontend.php:327
+msgid "Mobile Phone"
+msgstr ""
+
+#: includes/class-frontend.php:328
+msgid "Nombre d'actions détenues"
+msgstr ""
+
+#: includes/class-frontend.php:329
+msgid "Buy Price"
+msgstr ""
+
+#: includes/class-frontend.php:330
+msgid "Sell Price"
+msgstr ""
+
+#: includes/class-frontend.php:331
+msgid "Perte Totale"
+msgstr ""
+
+#: includes/class-frontend.php:332
+msgid "Remarques"
+msgstr ""
+
+#: includes/class-frontend.php:335
+msgid "Your Name (Required)"
+msgstr ""
+
+#: includes/class-frontend.php:336
+msgid "Your Email Address (Required)"
+msgstr ""
+
+#: includes/class-frontend.php:337
+msgid "Mobile Phone (Required)"
+msgstr ""
+
+#: includes/class-frontend.php:338
+msgid "Nombre d'actions détenues"
+msgstr ""
+
+#: includes/class-frontend.php:339
+msgid "Buy Price"
+msgstr ""
+
+#: includes/class-frontend.php:340
+msgid "Sell Price"
+msgstr ""
+
+#: includes/class-frontend.php:341
+msgid "Perte Totale"
+msgstr ""
+
+#: includes/class-frontend.php:342
+msgid "Remarques"
+msgstr ""
+
+#: includes/class-frontend.php:344
+msgid "Submit"
+msgstr ""
+
+#: includes/class-frontend.php:348
+msgid "Your Name"
+msgstr ""
+
+#: includes/class-frontend.php:349
+msgid "Email address"
+msgstr ""
+
+#: includes/class-frontend.php:350
+msgid "Mobile Phone"
+msgstr ""
+
+#: includes/class-frontend.php:351
+msgid "Number of Shares Held"
+msgstr ""
+
+#: includes/class-frontend.php:352
+msgid "Purchase Price"
+msgstr ""
+
+#: includes/class-frontend.php:353
+msgid "Sell Price"
+msgstr ""
+
+#: includes/class-frontend.php:354
+msgid "Total Loss"
+msgstr ""
+
+#: includes/class-frontend.php:355
+msgid "Remarks"
+msgstr ""
+
+#: includes/class-frontend.php:358
+msgid "Your Name (Required)"
+msgstr ""
+
+#: includes/class-frontend.php:359
+msgid "Your Email Address (Required)"
+msgstr ""
+
+#: includes/class-frontend.php:360
+msgid "Mobile Phone (Required)"
+msgstr ""
+
+#: includes/class-frontend.php:361
+msgid "Number of shares held"
+msgstr ""
+
+#: includes/class-frontend.php:362
+msgid "Purchase price per share"
+msgstr ""
+
+#: includes/class-frontend.php:363
+msgid "Sell price per share"
+msgstr ""
+
+#: includes/class-frontend.php:364
+msgid "Total financial loss"
+msgstr ""
+
+#: includes/class-frontend.php:365
+msgid "Additional comments"
+msgstr ""
+
+#: includes/class-frontend.php:367
+msgid "Submit Registration"
+msgstr ""
+
+#: includes/companies/class-atos.php:135
+msgid "ATOS Shareholder Registration"
+msgstr ""
+
+#: includes/companies/class-atos.php:136
+msgid "Please provide your ATOS shareholding information for the class action lawsuit."
+msgstr ""
+
+#: includes/companies/class-atos.php:140
+msgid "Your Name"
+msgstr ""
+
+#: includes/companies/class-atos.php:141
+msgid "Your Name (Required)"
+msgstr ""
+
+#: includes/companies/class-atos.php:146
+msgid "Email address"
+msgstr ""
+
+#: includes/companies/class-atos.php:147
+msgid "Your Email Address (Required)"
+msgstr ""
+
+#: includes/companies/class-atos.php:152
+msgid "Mobile Phone"
+msgstr ""
+
+#: includes/companies/class-atos.php:153
+msgid "Mobile Phone (Required)"
+msgstr ""
+
+#: includes/companies/class-atos.php:158
+msgid "Nombre d'actions détenues"
+msgstr ""
+
+#: includes/companies/class-atos.php:159
+msgid "Nombre d'actions détenues"
+msgstr ""
+
+#: includes/companies/class-atos.php:164
+msgid "Buy Price"
+msgstr ""
+
+#: includes/companies/class-atos.php:165
+msgid "Buy Price"
+msgstr ""
+
+#: includes/companies/class-atos.php:170
+msgid "Sell Price"
+msgstr ""
+
+#: includes/companies/class-atos.php:171
+msgid "Sell Price"
+msgstr ""
+
+#: includes/companies/class-atos.php:176
+msgid "Perte Totale"
+msgstr ""
+
+#: includes/companies/class-atos.php:177
+msgid "Perte Totale"
+msgstr ""
+
+#: includes/companies/class-atos.php:182
+msgid "Remarques"
+msgstr ""
+
+#: includes/companies/class-atos.php:183
+msgid "Remarques"
+msgstr ""
+
+#: includes/companies/class-atos.php:186
+msgid "Submit"
+msgstr ""
+
+#: includes/companies/class-atos.php:187
+msgid "Vos données ont été comptabilisées avec succès! <br> Veuillez rafraichir la page pour voir le nouveau total d'actions cumulées"
+msgstr ""
+
+#: includes/companies/class-atos.php:353
+msgid "UPRA Registration - ATOS"
+msgstr ""
+
+#: includes/companies/class-atos.php:356
+msgid "ATOS Class Action - Important Update"
+msgstr ""
+
+#: includes/companies/class-atos.php:359
+msgid "ATOS Class Action - Next Steps"
+msgstr ""
+
+#: includes/companies/class-atos.php:390
+#, php-format
+msgid "New %s Shareholder Registration"
+msgstr ""
+
+#: includes/companies/class-atos.php:448
+msgid "Name"
+msgstr ""
+
+#: includes/companies/class-atos.php:449
+msgid "Email"
+msgstr ""
+
+#: includes/companies/class-atos.php:450
+msgid "Phone"
+msgstr ""
+
+#: includes/companies/class-atos.php:451
+msgid "Stock Count"
+msgstr ""
+
+#: includes/companies/class-atos.php:452
+msgid "Purchase Price"
+msgstr ""
+
+#: includes/companies/class-atos.php:453
+msgid "Sell Price"
+msgstr ""
+
+#: includes/companies/class-atos.php:454
+msgid "Loss"
+msgstr ""
+
+#: includes/companies/class-atos.php:455
+msgid "IP Address"
+msgstr ""
+
+#: includes/companies/class-atos.php:456
+msgid "Country"
+msgstr ""
+
+#: includes/companies/class-atos.php:458
+msgid "Remarks"
+msgstr ""
+
+#: includes/companies/class-atos.php:461
+msgid "Registration time:"
+msgstr ""
+
+#: templates/data-collection-form.php:46
+msgid "Your Name"
+msgstr ""
+
+#: templates/data-collection-form.php:47
+msgid "Email address"
+msgstr ""
+
+#: templates/data-collection-form.php:48
+msgid "Mobile Phone"
+msgstr ""
+
+#: templates/data-collection-form.php:49
+msgid "Nombre d'actions détenues"
+msgstr ""
+
+#: templates/data-collection-form.php:50
+msgid "Buy Price"
+msgstr ""
+
+#: templates/data-collection-form.php:51
+msgid "Sell Price"
+msgstr ""
+
+#: templates/data-collection-form.php:52
+msgid "Perte Totale"
+msgstr ""
+
+#: templates/data-collection-form.php:53
+msgid "Remarques"
+msgstr ""
+
+#: templates/data-collection-form.php:54
+msgid "Submit"
+msgstr ""
+
+#: upra-class-action.php:107
+msgid "You are not currently logged in."
+msgstr ""
+
+#. Plugin Name of the plugin
+msgid "UPRA Class Action"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://upra.fr"
+msgstr ""
+
+#. Description of the plugin
+msgid "A comprehensive plugin for collecting shareholder data for class action lawsuits. Supports multiple companies including ATOS, URPEA, and others."
+msgstr ""
+
+#. Author of the plugin
+msgid "UPRA"
+msgstr ""

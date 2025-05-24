@@ -1,0 +1,471 @@
+/**
+ * Admin CSS for UPRA Class Action Plugin
+ * Styles for WordPress admin interface
+ */
+
+/* ==========================================================================
+   Dashboard Overview
+   ========================================================================== */
+
+.upra-admin-dashboard {
+    margin-top: 20px;
+}
+
+.upra-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.upra-card {
+    background: #ffffff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.upra-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.upra-card-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #135e96;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   Company Statistics
+   ========================================================================== */
+
+.upra-company-stats {
+    background: #ffffff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.upra-company-stats h2 {
+    background: #f6f7f7;
+    margin: 0;
+    padding: 15px 20px;
+    border-bottom: 1px solid #c3c4c7;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.upra-company-stats .wp-list-table {
+    border: none;
+    box-shadow: none;
+}
+
+/* ==========================================================================
+   Quick Actions
+   ========================================================================== */
+
+.upra-quick-actions {
+    background: #ffffff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.upra-quick-actions h2 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.upra-action-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.upra-action-buttons .button {
+    padding: 8px 16px;
+    height: auto;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Company Selection
+   ========================================================================== */
+
+.upra-company-selection {
+    background: #ffffff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.upra-company-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.upra-company-card {
+    border: 2px solid #dcdcde;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upra-company-card:hover {
+    border-color: #2271b1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upra-company-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d2327;
+}
+
+.upra-company-stats p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #646970;
+}
+
+.upra-company-actions {
+    margin-top: 20px;
+}
+
+.upra-company-actions .button {
+    margin: 0 5px;
+}
+
+/* ==========================================================================
+   Statistics Summary
+   ========================================================================== */
+
+.upra-statistics-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f6f7f7;
+    border-left: 4px solid #72aee6;
+}
+
+.upra-stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.upra-stat-card {
+    background: #ffffff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+}
+
+.upra-stat-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #646970;
+    text-transform: uppercase;
+}
+
+.upra-stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #135e96;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   Tools and Reports
+   ========================================================================== */
+
+.upra-tools-container,
+.upra-reports-container {
+    margin-top: 20px;
+}
+
+.upra-tool-section,
+.upra-report-section {
+    background: #ffffff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.upra-tool-section h2,
+.upra-report-section h2 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.upra-export-buttons,
+.upra-email-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.upra-report-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.upra-stat-box {
+    background: #f6f7f7;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+}
+
+.upra-stat-box h3 {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.upra-stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #135e96;
+    line-height: 1;
+}
+
+.upra-report-actions {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #dcdcde;
+}
+
+/* ==========================================================================
+   Bulk Email Form
+   ========================================================================== */
+
+.upra-bulk-email-form {
+    background: #ffffff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.upra-bulk-email-form h2 {
+    margin: 0 0 15px 0;
+    color: #1d2327;
+}
+
+.upra-bulk-email-form .form-table th {
+    width: 150px;
+    padding-left: 0;
+}
+
+/* ==========================================================================
+   List Table Enhancements
+   ========================================================================== */
+
+.wp-list-table .column-id { width: 5%; }
+.wp-list-table .column-stockholder_name { width: 15%; }
+.wp-list-table .column-email { width: 18%; }
+.wp-list-table .column-phone { width: 12%; }
+.wp-list-table .column-stock { width: 8%; }
+.wp-list-table .column-purchase_price { width: 8%; }
+.wp-list-table .column-sell_price { width: 8%; }
+.wp-list-table .column-loss { width: 8%; }
+.wp-list-table .column-created_at { width: 10%; }
+.wp-list-table .column-actions { width: 8%; }
+
+.wp-list-table .upra-edit-shareholder,
+.wp-list-table .upra-view-shareholder,
+.wp-list-table .upra-delete-shareholder {
+    margin-right: 5px;
+}
+
+.wp-list-table .button-small {
+    padding: 2px 6px;
+    font-size: 11px;
+    line-height: 1.4;
+    height: auto;
+}
+
+/* ==========================================================================
+   Dashboard Widget
+   ========================================================================== */
+
+.upra-dashboard-widget {
+    padding: 12px;
+}
+
+.upra-dashboard-widget p {
+    margin: 8px 0;
+}
+
+.upra-dashboard-widget .button {
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   Loading States
+   ========================================================================== */
+
+.upra-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.upra-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #2271b1;
+    border-radius: 50%;
+    animation: upra-admin-spin 1s linear infinite;
+}
+
+@keyframes upra-admin-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 782px) {
+    .upra-summary-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .upra-company-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .upra-stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .upra-report-stats {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    .upra-action-buttons {
+        flex-direction: column;
+    }
+    
+    .upra-export-buttons,
+    .upra-email-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .upra-company-card,
+    .upra-tool-section,
+    .upra-report-section {
+        padding: 15px;
+    }
+    
+    .upra-card {
+        padding: 15px;
+    }
+    
+    .upra-card-value {
+        font-size: 24px;
+    }
+    
+    .upra-stat-number {
+        font-size: 20px;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .upra-action-buttons,
+    .upra-export-buttons,
+    .upra-email-buttons,
+    .upra-report-actions {
+        display: none;
+    }
+    
+    .upra-card,
+    .upra-tool-section,
+    .upra-report-section {
+        border: 1px solid #000;
+        box-shadow: none;
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.upra-card:focus-within,
+.upra-company-card:focus-within {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Custom Notices
+   ========================================================================== */
+
+.upra-notice {
+    background: #ffffff;
+    border-left: 4px solid #72aee6;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    margin: 5px 15px 2px;
+    padding: 1px 12px;
+}
+
+.upra-notice.upra-notice-success {
+    border-left-color: #00a32a;
+}
+
+.upra-notice.upra-notice-error {
+    border-left-color: #d63638;
+}
+
+.upra-notice.upra-notice-warning {
+    border-left-color: #dba617;
+}
+
+.upra-notice p {
+    margin: 0.5em 0;
+    padding: 2px;
+    font-size: 13px;
+    line-height: 1.5;
+}

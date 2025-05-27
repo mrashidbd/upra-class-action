@@ -159,8 +159,8 @@ class UPRA_Class_Action_List_Table extends WP_List_Table {
             
             case 'remarks':
                 $remarks = esc_html($item->remarks);
-                if (strlen($remarks) > 50) {
-                    return substr($remarks, 0, 50) . '...';
+                if (strlen($remarks) > 100) {
+                    return '<span title="' . esc_attr($remarks) . '">' . substr($remarks, 0, 100) . '...</span>';
                 }
                 return $remarks;
             
@@ -185,20 +185,23 @@ class UPRA_Class_Action_List_Table extends WP_List_Table {
         $actions = array();
         
         $actions['edit'] = sprintf(
-            '<a href="#" class="upra-edit-shareholder" data-id="%d">%s</a>',
+            '<a href="#" class="upra-edit-shareholder" data-id="%d" data-company="%s">%s</a>',
             $item->id,
+            esc_attr($this->company),
             __('Edit', 'upra-class-action')
         );
         
         $actions['view'] = sprintf(
-            '<a href="#" class="upra-view-shareholder" data-id="%d">%s</a>',
+            '<a href="#" class="upra-view-shareholder" data-id="%d" data-company="%s">%s</a>',
             $item->id,
+            esc_attr($this->company),
             __('View Details', 'upra-class-action')
         );
         
         $actions['delete'] = sprintf(
-            '<a href="#" class="upra-delete-shareholder" data-id="%d" data-nonce="%s">%s</a>',
+            '<a href="#" class="upra-delete-shareholder" data-id="%d" data-company="%s" data-nonce="%s">%s</a>',
             $item->id,
+            esc_attr($this->company),
             wp_create_nonce('delete_shareholder_' . $item->id),
             __('Delete', 'upra-class-action')
         );
@@ -213,27 +216,27 @@ class UPRA_Class_Action_List_Table extends WP_List_Table {
         $actions = array();
         
         $actions[] = sprintf(
-            '<a href="#" class="button button-small upra-edit-shareholder" data-id="%d">%s</a>',
+            '<a href="#" class="button button-small upra-edit-shareholder" data-id="%d" data-company="%s" title="%s">%s</a>',
             $item->id,
+            esc_attr($this->company),
+            __('Edit shareholder details', 'upra-class-action'),
             __('Edit', 'upra-class-action')
         );
         
         $actions[] = sprintf(
-            '<a href="#" class="button button-small upra-view-shareholder" data-id="%d">%s</a>',
+            '<a href="#" class="button button-small upra-view-shareholder" data-id="%d" data-company="%s" title="%s">%s</a>',
             $item->id,
+            esc_attr($this->company),
+            __('View shareholder details', 'upra-class-action'),
             __('View', 'upra-class-action')
         );
         
         $actions[] = sprintf(
-            '<a href="mailto:%s" class="button button-small">%s</a>',
-            esc_attr($item->email),
-            __('Email', 'upra-class-action')
-        );
-        
-        $actions[] = sprintf(
-            '<a href="#" class="button button-small button-link-delete upra-delete-shareholder" data-id="%d" data-nonce="%s">%s</a>',
+            '<a href="#" class="button button-small button-link-delete upra-delete-shareholder" data-id="%d" data-company="%s" data-nonce="%s" title="%s">%s</a>',
             $item->id,
+            esc_attr($this->company),
             wp_create_nonce('delete_shareholder_' . $item->id),
+            __('Delete this shareholder', 'upra-class-action'),
             __('Delete', 'upra-class-action')
         );
 
@@ -364,10 +367,10 @@ class UPRA_Class_Action_List_Table extends WP_List_Table {
         foreach ($shareholder_ids as $id) {
             $args = array(
                 'company' => $this->company,
+                'search' => '',
                 'limit' => 1,
                 'offset' => 0
             );
-            // This is a simplified approach - in practice, you'd want a more efficient method
             $data = $this->database->get_shareholders_data($args);
             foreach ($data as $shareholder) {
                 if ($shareholder->id == $id) {
@@ -433,7 +436,7 @@ class UPRA_Class_Action_List_Table extends WP_List_Table {
     private function bulk_email_redirect($shareholder_ids) {
         $ids_string = implode(',', $shareholder_ids);
         $redirect_url = add_query_arg(array(
-            'page' => 'upra-shareholders-tools',
+            'page' => 'upra-class-action-tools',
             'company' => $this->company,
             'action' => 'bulk_email',
             'selected_ids' => $ids_string
@@ -441,73 +444,6 @@ class UPRA_Class_Action_List_Table extends WP_List_Table {
         
         wp_redirect($redirect_url);
         exit;
-    }
-
-    /**
-     * Display table navigation
-     */
-    protected function display_tablenav($which) {
-        ?>
-        <div class="tablenav <?php echo esc_attr($which); ?>">
-            <div class="alignleft actions bulkactions">
-                <?php $this->bulk_actions($which); ?>
-            </div>
-            
-            <?php if ($which === 'top'): ?>
-                <div class="alignright">
-                    <div class="upra-table-info">
-                        <span class="displaying-num">
-                            <?php printf(
-                                _n('%s item', '%s items', $this->get_pagination_arg('total_items'), 'upra-class-action'),
-                                number_format_i18n($this->get_pagination_arg('total_items'))
-                            ); ?>
-                        </span>
-                    </div>
-                </div>
-            <?php endif; ?>
-            
-            <?php
-            $this->extra_tablenav($which);
-            $this->pagination($which);
-            ?>
-            
-            <br class="clear" />
-        </div>
-        <?php
-    }
-
-    /**
-     * Extra table navigation
-     */
-    protected function extra_tablenav($which) {
-        if ($which === 'top') {
-            ?>
-            <div class="alignleft actions">
-                <!-- Company filter could go here if supporting multiple companies in one view -->
-                <?php
-                // Add company-specific filters if needed
-                $this->company_filters();
-                ?>
-            </div>
-            <?php
-        }
-    }
-
-    /**
-     * Company-specific filters
-     */
-    private function company_filters() {
-        // Add any company-specific filtering options here
-        // For example, date range filters, status filters, etc.
-        ?>
-        <select name="date_filter" id="date-filter">
-            <option value=""><?php _e('All dates', 'upra-class-action'); ?></option>
-            <option value="today"><?php _e('Today', 'upra-class-action'); ?></option>
-            <option value="week"><?php _e('This week', 'upra-class-action'); ?></option>
-            <option value="month"><?php _e('This month', 'upra-class-action'); ?></option>
-        </select>
-        <?php
-        submit_button(__('Filter', 'upra-class-action'), '', 'filter_action', false, array('id' => 'post-query-submit'));
     }
 
     /**
@@ -531,38 +467,6 @@ class UPRA_Class_Action_List_Table extends WP_List_Table {
             __('No %s shareholders found.', 'upra-class-action'),
             strtoupper($this->company)
         );
-    }
-
-    /**
-     * Generate search box
-     */
-    public function search_box($text, $input_id) {
-        if (empty($_REQUEST['s']) && !$this->has_items()) {
-            return;
-        }
-
-        $input_id = $input_id . '-search-input';
-        
-        if (!empty($_REQUEST['orderby'])) {
-            echo '<input type="hidden" name="orderby" value="' . esc_attr($_REQUEST['orderby']) . '" />';
-        }
-        if (!empty($_REQUEST['order'])) {
-            echo '<input type="hidden" name="order" value="' . esc_attr($_REQUEST['order']) . '" />';
-        }
-        ?>
-        <p class="search-box">
-            <label class="screen-reader-text" for="<?php echo esc_attr($input_id); ?>"><?php echo $text; ?>:</label>
-            <input type="search" id="<?php echo esc_attr($input_id); ?>" name="s" value="<?php _admin_search_query(); ?>" placeholder="<?php esc_attr_e('Search by name or email...', 'upra-class-action'); ?>" />
-            <?php submit_button($text, 'button', '', false, array('id' => 'search-submit')); ?>
-        </p>
-        <?php
-    }
-
-    /**
-     * Get the current company
-     */
-    public function get_company() {
-        return $this->company;
     }
 
     /**
@@ -595,7 +499,52 @@ class UPRA_Class_Action_List_Table extends WP_List_Table {
             </tr>
             </tfoot>
         </table>
+        
+        <!-- Add custom CSS for column widths -->
+        <style type="text/css">
+        .wp-list-table .column-id { width: 3%; }
+        .wp-list-table .column-stockholder_name { width: 12%; }
+        .wp-list-table .column-email { width: 15%; }
+        .wp-list-table .column-phone { width: 10%; }
+        .wp-list-table .column-stock { width: 6%; }
+        .wp-list-table .column-purchase_price { width: 8%; }
+        .wp-list-table .column-sell_price { width: 8%; }
+        .wp-list-table .column-loss { width: 8%; }
+        .wp-list-table .column-ip { width: 10%; }
+        .wp-list-table .column-country { width: 8%; }
+        .wp-list-table .column-remarks { width: 20%; min-width: 150px; }
+        .wp-list-table .column-created_at { width: 10%; }
+        .wp-list-table .column-actions { width: 12%; }
+        
+        .wp-list-table .column-remarks span {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+        }
+        
+        .upra-edit-shareholder,
+        .upra-view-shareholder,
+        .upra-delete-shareholder {
+            margin-right: 5px;
+        }
+        
+        .button-small {
+            padding: 2px 6px;
+            font-size: 11px;
+            line-height: 1.4;
+            height: auto;
+        }
+        </style>
         <?php
         $this->display_tablenav('bottom');
+    }
+
+    /**
+     * Get the current company
+     */
+    public function get_company() {
+        return $this->company;
     }
 }

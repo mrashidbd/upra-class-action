@@ -80,10 +80,10 @@ class UPRA_Class_Action {
         
         // Company-specific classes
         require_once UPRA_CLASS_ACTION_PLUGIN_DIR . 'includes/companies/class-atos.php';
+        require_once UPRA_CLASS_ACTION_PLUGIN_DIR . 'includes/companies/class-urpea.php';
         
-        // Admin classes (only for admin users)
+        // Admin list table class (only for admin users)
         if (is_admin()) {
-            require_once UPRA_CLASS_ACTION_PLUGIN_DIR . 'admin/class-admin-menu.php';
             require_once UPRA_CLASS_ACTION_PLUGIN_DIR . 'admin/class-list-table.php';
         }
     }
@@ -100,11 +100,11 @@ class UPRA_Class_Action {
         
         // Initialize company-specific components
         UPRA_Class_Action_ATOS::get_instance();
+        UPRA_Class_Action_URPEA::get_instance();
         
         // Initialize admin components (only for admin users)
         if (is_admin()) {
             UPRA_Class_Action_Admin::get_instance();
-            UPRA_Class_Action_Admin_Menu::get_instance();
         }
     }
 
@@ -147,9 +147,13 @@ class UPRA_Class_Action {
     private function set_default_options() {
         $default_options = array(
             'version' => UPRA_CLASS_ACTION_VERSION,
-            'companies' => array('atos'), // Default to ATOS, can be extended
+            'supported_companies' => array('atos', 'urpea'), // Support both by default
             'email_notifications' => true,
-            'duplicate_check' => true
+            'duplicate_check' => true,
+            'admin_notifications' => false,
+            'data_retention_days' => 0,
+            'email_from_name' => 'UPRA',
+            'email_from_address' => 'no-reply@upra.fr'
         );
         
         add_option('upra_class_action_options', $default_options);

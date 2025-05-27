@@ -42,7 +42,6 @@ class UPRA_Class_Action_Ajax_Handler {
      */
     private function __construct() {
         $this->database = UPRA_Class_Action_Database::get_instance();
-        
         $this->init_hooks();
     }
 
@@ -57,6 +56,10 @@ class UPRA_Class_Action_Ajax_Handler {
         // Get company statistics via AJAX
         add_action('wp_ajax_upra_get_company_stats', array($this, 'handle_get_company_stats'));
         add_action('wp_ajax_nopriv_upra_get_company_stats', array($this, 'handle_get_company_stats'));
+        
+        // Legacy ATOS support
+        add_action('wp_ajax_kdb_add_member', array($this, 'handle_legacy_atos'));
+        add_action('wp_ajax_nopriv_kdb_add_member', array($this, 'handle_legacy_atos'));
     }
 
     /**
@@ -118,13 +121,34 @@ class UPRA_Class_Action_Ajax_Handler {
     }
 
     /**
+     * Handle legacy ATOS AJAX requests
+     */
+    public function handle_legacy_atos() {
+        if (isset($_POST['add_member'])) {
+            // Parse legacy form data
+            $form_data = array();
+            wp_parse_str($_POST['add_member'], $form_data);
+            
+            // Add company identifier
+            $form_data['company'] = 'atos';
+            
+            // Create nonce for security
+            $_POST['nonce'] = wp_create_nonce('upra_shareholder_nonce');
+            $_POST['shareholder_data'] = $_POST['add_member'];
+            
+            // Call the main handler
+            $this->handle_add_shareholder();
+        } else {
+            wp_send_json_error(__('No form data received', 'upra-class-action'));
+        }
+    }
+
+    /**
      * Handle getting company statistics via AJAX
      */
     public function handle_get_company_stats() {
         $company = sanitize_text_field($_POST['company'] ?? 'atos');
-        
         $stats = $this->get_company_statistics($company);
-        
         wp_send_json_success($stats);
     }
 
@@ -229,10 +253,9 @@ class UPRA_Class_Action_Ajax_Handler {
     }
 
     /**
-     * Get client country (placeholder for future geolocation implementation)
+     * Get client country
      */
     private function get_client_country() {
-        // For now, return 'Unknown' - can be enhanced with geolocation service
         return 'Unknown';
     }
 
@@ -240,15 +263,29 @@ class UPRA_Class_Action_Ajax_Handler {
      * Send confirmation email
      */
     private function send_confirmation_email($shareholder_data) {
-        // Initialize email handler if not already done
+        // Check if email notifications are enabled
+        $options = get_option('upra_class_action_options', array());
+        $email_enabled = isset($options['email_notifications']) ? $options['email_notifications'] : true;
+        
+        if (!$email_enabled) {
+            return false;
+        }
+
         if (!$this->email_handler) {
             $this->email_handler = UPRA_Class_Action_Email_Handler::get_instance();
         }
 
-        $this->email_handler->send_confirmation_email(
+        $result = $this->email_handler->send_confirmation_email(
             $shareholder_data['email'],
             $shareholder_data['company']
         );
+        
+        // Log email result for debugging
+        if (defined('WP_DEBUG') && WP_DEBUG) {
+            error_log('UPRA Email Result: ' . ($result ? 'SUCCESS' : 'FAILED') . ' for ' . $shareholder_data['email']);
+        }
+        
+        return $result;
     }
 
     /**
@@ -272,57 +309,5 @@ class UPRA_Class_Action_Ajax_Handler {
         );
 
         return $messages[$company] ?? $messages['atos'];
-    }
-
-    /**
-     * Handle bulk data import (for admin use)
-     */
-    public function handle_bulk_import() {
-        // Check permissions
-        if (!current_user_can('manage_options')) {
-            wp_send_json_error(array(
-                'message' => __('Insufficient permissions', 'upra-class-action')
-            ));
-        }
-
-        // Verify nonce
-        if (!wp_verify_nonce($_POST['nonce'] ?? '', 'upra_bulk_import_nonce')) {
-            wp_send_json_error(array(
-                'message' => __('Security check failed', 'upra-class-action')
-            ));
-        }
-
-        // Process CSV or other bulk data
-        // Implementation depends on requirements
-        
-        wp_send_json_success(array(
-            'message' => __('Bulk import completed successfully', 'upra-class-action')
-        ));
-    }
-
-    /**
-     * Handle data export (for admin use)
-     */
-    public function handle_data_export() {
-        // Check permissions
-        if (!current_user_can('manage_options')) {
-            wp_send_json_error(array(
-                'message' => __('Insufficient permissions', 'upra-class-action')
-            ));
-        }
-
-        $company = sanitize_text_field($_POST['company'] ?? 'atos');
-        
-        // Get all data for the company
-        $data = $this->database->get_shareholders_data(array(
-            'company' => $company,
-            'limit' => 999999 // Get all records
-        ));
-
-        wp_send_json_success(array(
-            'data' => $data,
-            'company' => $company,
-            'export_time' => current_time('mysql')
-        ));
     }
 }

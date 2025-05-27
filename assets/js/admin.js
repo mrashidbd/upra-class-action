@@ -15,6 +15,8 @@ jQuery(document).ready(function($) {
         initializeExportHandlers();
         initializeBulkEmailHandlers();
         initializeDeleteHandlers();
+        initializeEditHandlers();
+        initializeViewHandlers();
         initializeTableActions();
         initializeFormValidation();
         initializeStatisticsRefresh();
@@ -24,7 +26,6 @@ jQuery(document).ready(function($) {
      * Export data handlers
      */
     function initializeExportHandlers() {
-        // Export button clicks
         $('.upra-export-btn').on('click', function(e) {
             e.preventDefault();
             
@@ -39,7 +40,6 @@ jQuery(document).ready(function($) {
             exportData(company, format);
         });
         
-        // Export form submission
         $('#upra-export-form').on('submit', function(e) {
             e.preventDefault();
             
@@ -74,16 +74,13 @@ jQuery(document).ready(function($) {
                 hideLoading();
                 
                 if (response.success) {
-                    // Create download link
                     var downloadUrl = upra_admin.ajax_url + 
                         '?action=upra_download_export' +
                         '&company=' + encodeURIComponent(company) +
                         '&format=' + encodeURIComponent(format) +
                         '&nonce=' + encodeURIComponent(upra_admin.nonce);
                     
-                    // Trigger download
                     window.location.href = downloadUrl;
-                    
                     showNotice(upra_admin.messages.export_success || 'Export completed successfully!', 'success');
                 } else {
                     showNotice(response.data || 'Export failed', 'error');
@@ -100,7 +97,6 @@ jQuery(document).ready(function($) {
      * Bulk email handlers
      */
     function initializeBulkEmailHandlers() {
-        // Bulk email form submission
         $('#upra-bulk-email-form').on('submit', function(e) {
             e.preventDefault();
             
@@ -121,13 +117,12 @@ jQuery(document).ready(function($) {
             sendBulkEmail(company, subject, message, form);
         });
         
-        // Quick bulk email buttons
         $('.upra-bulk-email-btn').on('click', function(e) {
             e.preventDefault();
             
             var company = $(this).data('company');
             if (company) {
-                window.location.href = 'admin.php?page=upra-shareholders-tools&company=' + company + '&action=bulk_email';
+                window.location.href = 'admin.php?page=upra-class-action-tools&company=' + company + '&action=bulk_email';
             }
         });
     }
@@ -173,11 +168,11 @@ jQuery(document).ready(function($) {
      * Delete handlers
      */
     function initializeDeleteHandlers() {
-        // Individual delete buttons
         $(document).on('click', '.upra-delete-shareholder', function(e) {
             e.preventDefault();
             
             var id = $(this).data('id');
+            var company = $(this).data('company');
             var nonce = $(this).data('nonce');
             var row = $(this).closest('tr');
             
@@ -185,36 +180,14 @@ jQuery(document).ready(function($) {
                 return;
             }
             
-            deleteShareholder(id, nonce, row);
-        });
-        
-        // Bulk delete handling
-        $(document).on('click', '.bulk-delete-btn', function(e) {
-            e.preventDefault();
-            
-            var selected = $('.wp-list-table input[name="shareholder[]"]:checked');
-            if (selected.length === 0) {
-                alert('Please select shareholders to delete');
-                return;
-            }
-            
-            if (!confirm('Are you sure you want to delete ' + selected.length + ' shareholders?')) {
-                return;
-            }
-            
-            var ids = [];
-            selected.each(function() {
-                ids.push($(this).val());
-            });
-            
-            bulkDeleteShareholders(ids);
+            deleteShareholder(id, company, nonce, row);
         });
     }
     
     /**
      * Delete individual shareholder
      */
-    function deleteShareholder(id, nonce, row) {
+    function deleteShareholder(id, company, nonce, row) {
         showLoading('Deleting shareholder...');
         
         $.ajax({
@@ -223,6 +196,7 @@ jQuery(document).ready(function($) {
             data: {
                 action: 'upra_delete_shareholder',
                 id: id,
+                company: company,
                 nonce: nonce
             },
             success: function(response) {
@@ -246,28 +220,268 @@ jQuery(document).ready(function($) {
     }
     
     /**
-     * Table action handlers
+     * Edit handlers
      */
-    function initializeTableActions() {
-        // Edit shareholder modal/form
+    function initializeEditHandlers() {
         $(document).on('click', '.upra-edit-shareholder', function(e) {
             e.preventDefault();
             
             var id = $(this).data('id');
-            // TODO: Implement edit modal or redirect to edit page
-            console.log('Edit shareholder:', id);
+            var company = $(this).data('company');
+            
+            openEditModal(id, company);
+        });
+    }
+    
+    /**
+     * Open edit modal
+     */
+    function openEditModal(id, company) {
+        // Clean up any existing modals first
+        $('#upra-edit-modal, #upra-view-modal').remove();
+        
+        showLoading('Loading shareholder data...');
+        
+        $.ajax({
+            url: upra_admin.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'upra_get_shareholder',
+                id: id,
+                company: company,
+                nonce: upra_admin.nonce
+            },
+            success: function(response) {
+                hideLoading();
+                
+                if (response.success) {
+                    showEditModal(response.data);
+                } else {
+                    showNotice('Failed to load shareholder data', 'error');
+                }
+            },
+            error: function() {
+                hideLoading();
+                showNotice('Failed to load shareholder data', 'error');
+            }
+        });
+    }
+    
+    /**
+     * Show edit modal
+     */
+    function showEditModal(data) {
+        var modalHtml = `
+            <div id="upra-edit-modal" class="upra-modal">
+                <div class="upra-modal-content">
+                    <div class="upra-modal-header">
+                        <h2>Edit Shareholder</h2>
+                        <span class="upra-modal-close">&times;</span>
+                    </div>
+                    <div class="upra-modal-body">
+                        <form id="upra-edit-form">
+                            <input type="hidden" name="id" value="${data.id}">
+                            <input type="hidden" name="company" value="${data.company}">
+                            
+                            <table class="form-table">
+                                <tr>
+                                    <th><label for="edit-name">Name</label></th>
+                                    <td><input type="text" id="edit-name" name="stockholder_name" value="${data.stockholder_name}" class="regular-text" required></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit-email">Email</label></th>
+                                    <td><input type="email" id="edit-email" name="email" value="${data.email}" class="regular-text" required></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit-phone">Phone</label></th>
+                                    <td><input type="text" id="edit-phone" name="phone" value="${data.phone}" class="regular-text" required></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit-stock">Stock</label></th>
+                                    <td><input type="number" id="edit-stock" name="stock" value="${data.stock}" class="small-text"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit-purchase">Purchase Price</label></th>
+                                    <td><input type="number" id="edit-purchase" name="purchase_price" value="${data.purchase_price}" step="0.01" class="small-text"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit-sell">Sell Price</label></th>
+                                    <td><input type="number" id="edit-sell" name="sell_price" value="${data.sell_price}" step="0.01" class="small-text"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit-loss">Loss</label></th>
+                                    <td><input type="number" id="edit-loss" name="loss" value="${data.loss}" step="0.01" class="small-text"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit-remarks">Remarks</label></th>
+                                    <td><textarea id="edit-remarks" name="remarks" rows="3" class="large-text">${data.remarks || ''}</textarea></td>
+                                </tr>
+                            </table>
+                            
+                            <p class="submit">
+                                <button type="submit" class="button button-primary">Update Shareholder</button>
+                                <button type="button" class="button upra-modal-close">Cancel</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        $('body').append(modalHtml);
+        
+        // Handle modal close
+        $(document).on('click', '.upra-modal-close', function() {
+            $('#upra-edit-modal, #upra-view-modal').remove();
         });
         
-        // View shareholder details
+        // Handle form submission - use document delegation
+        $(document).on('submit', '#upra-edit-form', function(e) {
+            e.preventDefault();
+            submitEditForm($(this));
+        });
+    }
+    
+    /**
+     * Submit edit form
+     */
+    function submitEditForm(form) {
+        showLoading('Updating shareholder...');
+        
+        $.ajax({
+            url: upra_admin.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'upra_update_shareholder',
+                form_data: form.serialize(),
+                nonce: upra_admin.nonce
+            },
+            success: function(response) {
+                hideLoading();
+                
+                if (response.success) {
+                    $('#upra-edit-modal').remove();
+                    showNotice('Shareholder updated successfully', 'success');
+                    location.reload(); // Refresh the page to show updated data
+                } else {
+                    showNotice(response.data || 'Failed to update shareholder', 'error');
+                }
+            },
+            error: function() {
+                hideLoading();
+                showNotice('Update request failed', 'error');
+            }
+        });
+    }
+    
+    /**
+     * View handlers
+     */
+    function initializeViewHandlers() {
         $(document).on('click', '.upra-view-shareholder', function(e) {
             e.preventDefault();
             
             var id = $(this).data('id');
-            // TODO: Implement view modal or redirect to view page
-            console.log('View shareholder:', id);
+            var company = $(this).data('company');
+            
+            openViewModal(id, company);
+        });
+    }
+    
+    /**
+     * Open view modal
+     */
+    function openViewModal(id, company) {
+        // Clean up any existing modals first
+        $('#upra-edit-modal, #upra-view-modal').remove();
+        
+        showLoading('Loading shareholder data...');
+        
+        $.ajax({
+            url: upra_admin.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'upra_get_shareholder',
+                id: id,
+                company: company,
+                nonce: upra_admin.nonce
+            },
+            success: function(response) {
+                hideLoading();
+                
+                if (response.success) {
+                    showViewModal(response.data);
+                } else {
+                    showNotice('Failed to load shareholder data', 'error');
+                }
+            },
+            error: function() {
+                hideLoading();
+                showNotice('Failed to load shareholder data', 'error');
+            }
+        });
+    }
+    
+    /**
+     * Show view modal
+     */
+    function showViewModal(data) {
+        var modalHtml = `
+            <div id="upra-view-modal" class="upra-modal">
+                <div class="upra-modal-content">
+                    <div class="upra-modal-header">
+                        <h2>Shareholder Details</h2>
+                        <span class="upra-modal-close">&times;</span>
+                    </div>
+                    <div class="upra-modal-body">
+                        <table class="form-table">
+                            <tr><th>ID:</th><td>${data.id}</td></tr>
+                            <tr><th>Name:</th><td>${data.stockholder_name}</td></tr>
+                            <tr><th>Email:</th><td><a href="mailto:${data.email}">${data.email}</a></td></tr>
+                            <tr><th>Phone:</th><td>${data.phone}</td></tr>
+                            <tr><th>Stock:</th><td>${numberFormat(data.stock)}</td></tr>
+                            <tr><th>Purchase Price:</th><td>${numberFormat(data.purchase_price, 2)}</td></tr>
+                            <tr><th>Sell Price:</th><td>${numberFormat(data.sell_price, 2)}</td></tr>
+                            <tr><th>Loss:</th><td>${numberFormat(data.loss, 2)}</td></tr>
+                            <tr><th>IP Address:</th><td>${data.ip || 'N/A'}</td></tr>
+                            <tr><th>Country:</th><td>${data.country || 'N/A'}</td></tr>
+                            <tr><th>Remarks:</th><td>${data.remarks || 'N/A'}</td></tr>
+                            <tr><th>Registration Date:</th><td>${formatDate(data.created_at)}</td></tr>
+                        </table>
+                        
+                        <p class="submit">
+                            <button type="button" class="button button-primary upra-modal-close">Close</button>
+                            <button type="button" class="button upra-edit-shareholder" data-id="${data.id}" data-company="${data.company}">Edit</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        $('body').append(modalHtml);
+        
+        // Handle modal close
+        $(document).on('click', '.upra-modal-close', function() {
+            $('#upra-view-modal').remove();
         });
         
-        // Table search enhancement
+        // Handle edit button in view modal
+        $('#upra-view-modal').on('click', '.upra-edit-shareholder', function() {
+            var id = $(this).data('id');
+            var company = $(this).data('company');
+            
+            // Close view modal first
+            $('#upra-view-modal').remove();
+            
+            // Then open edit modal
+            openEditModal(id, company);
+        });
+    }
+    
+    /**
+     * Table action handlers
+     */
+    function initializeTableActions() {
         var searchTimer;
         $('.wp-list-table .search-box input[type="search"]').on('input', function() {
             clearTimeout(searchTimer);
@@ -275,7 +489,6 @@ jQuery(document).ready(function($) {
             
             searchTimer = setTimeout(function() {
                 if (searchTerm.length >= 3 || searchTerm.length === 0) {
-                    // Auto-submit search after 500ms delay
                     $(this).closest('form').submit();
                 }
             }.bind(this), 500);
@@ -286,7 +499,6 @@ jQuery(document).ready(function($) {
      * Form validation
      */
     function initializeFormValidation() {
-        // Export form validation
         $('#upra-export-form').on('submit', function(e) {
             var company = $(this).find('[name="company"]').val();
             if (!company) {
@@ -296,7 +508,6 @@ jQuery(document).ready(function($) {
             }
         });
         
-        // Bulk email form validation
         $('#upra-bulk-email-form').on('submit', function(e) {
             var company = $(this).find('[name="company"]').val();
             var subject = $(this).find('[name="subject"]').val().trim();
@@ -329,10 +540,8 @@ jQuery(document).ready(function($) {
      * Statistics refresh
      */
     function initializeStatisticsRefresh() {
-        // Auto-refresh statistics every 5 minutes
         setInterval(refreshStatistics, 300000);
         
-        // Manual refresh button
         $('.upra-refresh-stats').on('click', function(e) {
             e.preventDefault();
             refreshStatistics();
@@ -372,7 +581,6 @@ jQuery(document).ready(function($) {
         Object.keys(stats).forEach(function(company) {
             var companyStats = stats[company];
             
-            // Update company-specific displays
             $('.upra-stat-' + company + '-shares').text(numberFormat(companyStats.shares || 0));
             $('.upra-stat-' + company + '-people').text(numberFormat(companyStats.shareholders || 0));
             $('.upra-stat-' + company + '-participation').text(numberFormat(companyStats.participation || 0, 2));
@@ -383,9 +591,6 @@ jQuery(document).ready(function($) {
      * Utility functions
      */
     
-    /**
-     * Show loading indicator
-     */
     function showLoading(message) {
         if ($('#upra-loading-modal').length === 0) {
             $('body').append(
@@ -402,16 +607,10 @@ jQuery(document).ready(function($) {
         $('#upra-loading-modal').show();
     }
     
-    /**
-     * Hide loading indicator
-     */
     function hideLoading() {
         $('#upra-loading-modal').hide();
     }
     
-    /**
-     * Show admin notice
-     */
     function showNotice(message, type) {
         type = type || 'info';
         
@@ -422,14 +621,12 @@ jQuery(document).ready(function($) {
         
         $('.wrap h1').after(notice);
         
-        // Auto-dismiss after 5 seconds
         setTimeout(function() {
             notice.fadeOut(300, function() {
                 $(this).remove();
             });
         }, 5000);
         
-        // Manual dismiss
         notice.find('.notice-dismiss').on('click', function() {
             notice.fadeOut(300, function() {
                 $(this).remove();
@@ -437,9 +634,6 @@ jQuery(document).ready(function($) {
         });
     }
     
-    /**
-     * Number formatting
-     */
     function numberFormat(number, decimals) {
         decimals = decimals || 0;
         return parseFloat(number).toLocaleString(undefined, {
@@ -448,114 +642,67 @@ jQuery(document).ready(function($) {
         });
     }
     
-    /**
-     * Update table counts after operations
-     */
+    function formatDate(dateString) {
+        var date = new Date(dateString);
+        return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+    }
+    
     function updateTableCounts() {
         var visibleRows = $('.wp-list-table tbody tr:visible').length;
         $('.displaying-num').text(visibleRows + ' items');
     }
     
-    /**
-     * Cleanup functions
-     */
-    function initializeCleanup() {
-        // Cleanup old data button
-        $('#upra-cleanup-btn').on('click', function(e) {
-            e.preventDefault();
-            
-            if (!confirm('Are you sure you want to clean up old data? This action cannot be undone.')) {
-                return;
+    // Add modal CSS
+    if ($('#upra-modal-styles').length === 0) {
+        $('head').append(`
+            <style id="upra-modal-styles">
+            .upra-modal {
+                display: block;
+                position: fixed;
+                z-index: 999999;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
             }
-            
-            cleanupOldData();
-        });
-        
-        // Optimize database button
-        $('#upra-optimize-btn').on('click', function(e) {
-            e.preventDefault();
-            
-            if (!confirm('Are you sure you want to optimize the database?')) {
-                return;
+            .upra-modal-content {
+                background-color: #fff;
+                margin: 5% auto;
+                padding: 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                width: 80%;
+                max-width: 800px;
+                max-height: 90%;
+                overflow-y: auto;
             }
-            
-            optimizeDatabase();
-        });
-    }
-    
-    /**
-     * Cleanup old data
-     */
-    function cleanupOldData() {
-        showLoading('Cleaning up old data...');
-        
-        $.ajax({
-            url: upra_admin.ajax_url,
-            type: 'POST',
-            data: {
-                action: 'upra_cleanup_data',
-                nonce: upra_admin.nonce
-            },
-            success: function(response) {
-                hideLoading();
-                
-                if (response.success) {
-                    showNotice(response.data || 'Data cleanup completed', 'success');
-                } else {
-                    showNotice(response.data || 'Cleanup failed', 'error');
-                }
-            },
-            error: function() {
-                hideLoading();
-                showNotice('Cleanup request failed', 'error');
+            .upra-modal-header {
+                padding: 15px 20px;
+                border-bottom: 1px solid #ddd;
+                background: #f1f1f1;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
-        });
-    }
-    
-    /**
-     * Optimize database
-     */
-    function optimizeDatabase() {
-        showLoading('Optimizing database...');
-        
-        $.ajax({
-            url: upra_admin.ajax_url,
-            type: 'POST',
-            data: {
-                action: 'upra_optimize_database',
-                nonce: upra_admin.nonce
-            },
-            success: function(response) {
-                hideLoading();
-                
-                if (response.success) {
-                    showNotice(response.data || 'Database optimization completed', 'success');
-                } else {
-                    showNotice(response.data || 'Optimization failed', 'error');
-                }
-            },
-            error: function() {
-                hideLoading();
-                showNotice('Optimization request failed', 'error');
+            .upra-modal-header h2 {
+                margin: 0;
+                font-size: 18px;
             }
-        });
-    }
-    
-    // Initialize cleanup functions
-    initializeCleanup();
-    
-    // Initialize tooltips (if available)
-    if (typeof $.fn.tooltip === 'function') {
-        $('[data-tooltip]').tooltip();
-    }
-    
-    // Initialize sortable tables (if needed)
-    if (typeof $.fn.sortable === 'function') {
-        $('.upra-sortable').sortable({
-            axis: 'y',
-            helper: 'clone',
-            opacity: 0.7
-        });
+            .upra-modal-close {
+                font-size: 24px;
+                font-weight: bold;
+                cursor: pointer;
+                color: #999;
+            }
+            .upra-modal-close:hover {
+                color: #000;
+            }
+            .upra-modal-body {
+                padding: 20px;
+            }
+            </style>
+        `);
     }
     
 });

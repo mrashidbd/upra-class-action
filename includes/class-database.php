@@ -55,9 +55,7 @@ class UPRA_Class_Action_Database {
         
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         
-        // Create shareholders data table
         $table_name = $wpdb->prefix . 'upra_shareholders_data';
-        
         $charset_collate = $wpdb->get_charset_collate();
         
         $sql = "CREATE TABLE $table_name (
@@ -79,17 +77,18 @@ class UPRA_Class_Action_Database {
             KEY company_idx (company),
             KEY email_idx (email),
             KEY phone_idx (phone),
-            KEY created_at_idx (created_at)
+            KEY created_at_idx (created_at),
+            UNIQUE KEY unique_email_company (email, company),
+            UNIQUE KEY unique_phone_company (phone, company)
         ) $charset_collate;";
         
         dbDelta($sql);
         
-        // Update database version
         update_option('upra_class_action_db_version', self::DB_VERSION);
     }
 
     /**
-     * Check if database needs to be updated
+     * Check if database needs updates
      */
     public function check_database_version() {
         $installed_version = get_option('upra_class_action_db_version', '0.0.0');
@@ -105,7 +104,6 @@ class UPRA_Class_Action_Database {
     public function insert_shareholder_data($data) {
         $table_name = $this->wpdb->prefix . 'upra_shareholders_data';
         
-        // Prepare data with defaults
         $insert_data = array(
             'company' => sanitize_text_field($data['company'] ?? 'atos'),
             'stockholder_name' => sanitize_text_field($data['stockholder_name']),
@@ -123,7 +121,9 @@ class UPRA_Class_Action_Database {
         $result = $this->wpdb->insert($table_name, $insert_data);
         
         if ($result === false) {
-            return new WP_Error('db_insert_error', __('Failed to insert data', 'upra-class-action'));
+            return new WP_Error('db_insert_error', 
+                sprintf(__('Failed to insert data: %s', 'upra-class-action'), $this->wpdb->last_error)
+            );
         }
         
         return $this->wpdb->insert_id;
@@ -152,7 +152,7 @@ class UPRA_Class_Action_Database {
         $table_name = $this->wpdb->prefix . 'upra_shareholders_data';
         
         $query = $this->wpdb->prepare(
-            "SELECT SUM(stock) FROM $table_name WHERE company = %s",
+            "SELECT COALESCE(SUM(stock), 0) FROM $table_name WHERE company = %s",
             $company
         );
         
@@ -166,7 +166,7 @@ class UPRA_Class_Action_Database {
         $table_name = $this->wpdb->prefix . 'upra_shareholders_data';
         
         $query = $this->wpdb->prepare(
-            "SELECT SUM(purchase_price * stock) FROM $table_name WHERE company = %s",
+            "SELECT COALESCE(SUM(purchase_price * stock), 0) FROM $table_name WHERE company = %s",
             $company
         );
         
@@ -196,7 +196,7 @@ class UPRA_Class_Action_Database {
         $defaults = array(
             'company' => 'atos',
             'orderby' => 'id',
-            'order' => 'ASC',
+            'order' => 'DESC',
             'search' => '',
             'limit' => 25,
             'offset' => 0
@@ -204,29 +204,26 @@ class UPRA_Class_Action_Database {
         
         $args = wp_parse_args($args, $defaults);
         
-        // Build the query
         $where = $this->wpdb->prepare("WHERE company = %s", $args['company']);
         
-        // Add search condition
         if (!empty($args['search'])) {
             $search = '%' . $this->wpdb->esc_like($args['search']) . '%';
             $where .= $this->wpdb->prepare(
-                " AND (stockholder_name LIKE %s OR email LIKE %s)",
+                " AND (stockholder_name LIKE %s OR email LIKE %s OR phone LIKE %s)",
+                $search,
                 $search,
                 $search
             );
         }
         
-        // Validate orderby
-        $allowed_orderby = array('id', 'stockholder_name', 'email', 'stock', 'created_at');
+        $allowed_orderby = array('id', 'stockholder_name', 'email', 'stock', 'purchase_price', 'sell_price', 'loss', 'created_at');
         if (!in_array($args['orderby'], $allowed_orderby)) {
             $args['orderby'] = 'id';
         }
         
-        // Validate order
         $args['order'] = strtoupper($args['order']);
         if (!in_array($args['order'], array('ASC', 'DESC'))) {
-            $args['order'] = 'ASC';
+            $args['order'] = 'DESC';
         }
         
         $orderby = "ORDER BY {$args['orderby']} {$args['order']}";
@@ -248,7 +245,8 @@ class UPRA_Class_Action_Database {
         if (!empty($search)) {
             $search = '%' . $this->wpdb->esc_like($search) . '%';
             $where .= $this->wpdb->prepare(
-                " AND (stockholder_name LIKE %s OR email LIKE %s)",
+                " AND (stockholder_name LIKE %s OR email LIKE %s OR phone LIKE %s)",
+                $search,
                 $search,
                 $search
             );
@@ -281,7 +279,6 @@ class UPRA_Class_Action_Database {
     public function update_shareholder_data($id, $data, $company = 'atos') {
         $table_name = $this->wpdb->prefix . 'upra_shareholders_data';
         
-        // Prepare data
         $update_data = array();
         $allowed_fields = array(
             'stockholder_name', 'email', 'phone', 'stock', 
@@ -329,6 +326,19 @@ class UPRA_Class_Action_Database {
     }
 
     /**
+     * Get single shareholder by ID
+     */
+    public function get_shareholder_by_id($id, $company = 'atos') {
+        $table_name = $this->wpdb->prefix . 'upra_shareholders_data';
+        
+        return $this->wpdb->get_row($this->wpdb->prepare(
+            "SELECT * FROM $table_name WHERE id = %d AND company = %s",
+            $id,
+            $company
+        ));
+    }
+
+    /**
      * Get all supported companies
      */
     public function get_supported_companies() {
@@ -349,5 +359,51 @@ class UPRA_Class_Action_Database {
         $wpdb->query("DROP TABLE IF EXISTS $table_name");
         
         delete_option('upra_class_action_db_version');
+    }
+
+    /**
+     * Get database statistics
+     */
+    public function get_database_statistics() {
+        $table_name = $this->wpdb->prefix . 'upra_shareholders_data';
+        
+        $stats = array();
+        
+        // Get company breakdown
+        $company_stats = $this->wpdb->get_results(
+            "SELECT company, 
+                    COUNT(*) as shareholders,
+                    COALESCE(SUM(stock), 0) as total_shares,
+                    COALESCE(SUM(purchase_price * stock), 0) as total_participation
+             FROM $table_name 
+             GROUP BY company"
+        );
+        
+        foreach ($company_stats as $row) {
+            $stats[$row->company] = array(
+                'shareholders' => (int) $row->shareholders,
+                'shares' => (int) $row->total_shares,
+                'participation' => (float) $row->total_participation
+            );
+        }
+        
+        return $stats;
+    }
+
+    /**
+     * Cleanup old data based on retention period
+     */
+    public function cleanup_old_data($retention_days = 0) {
+        if ($retention_days <= 0) {
+            return 0;
+        }
+        
+        $table_name = $this->wpdb->prefix . 'upra_shareholders_data';
+        $cutoff_date = date('Y-m-d H:i:s', strtotime("-{$retention_days} days"));
+        
+        return $this->wpdb->query($this->wpdb->prepare(
+            "DELETE FROM {$table_name} WHERE created_at < %s",
+            $cutoff_date
+        ));
     }
 }
